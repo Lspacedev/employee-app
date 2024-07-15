@@ -1,0 +1,46 @@
+#Employee App
+
+Problem: Create admin portal to track current employees in the portal.
+    What should it track?
+    1. Name and surname.
+    2. ID number
+    3. Email address
+    4. Employee position
+    5. Phone number
+    6. Image
+
+Requirements: 
+    User interface:
+    1. Allow admins to view, update, add and delete added employees
+    2. Responsive to different screens
+    3. Should also include search fields to help filter out employees
+
+    Inputs:
+    1. Name
+    2. Surname
+    3. Email address
+    4. Employee position
+    5. Employee department
+    6. Phone number
+    7. Image of the employee
+    8. Date employee started working at the organisation
+
+    Features:
+    Must be able to:
+    1. Add new employees
+    2. View already added employees
+    3. Update details of added employees
+    4. Delete added employees
+    5. Filter employee by name, surname, ID number, number of years/months/days at the organisation, departments
+
+
+Solution: 
+    1. Take employee information as input - name, surname, email, etc.
+    2. Store employee input as object, Employee.
+    3. Create employees array and store/push employee input;
+    3. Use employees array to display employees in dashboard under different sections:
+        1. Employees
+    4. In each employee subsection, add delete button, edit button.
+
+
+
