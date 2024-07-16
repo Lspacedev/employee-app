@@ -5,21 +5,26 @@ import { useState } from "react";
 
 function App() {
   const [employees, setEmployees] = useState([]);
+  const [count, setCount] = useState(0);
 
-  function handleAddEmployees(id) {
+  function handleAddEmployees(obj) {
     //find employee
-    const filteredEmployee = employees.filter((employee) => employee.id === id);
+    const filteredEmployee = employees.filter(
+      (employee) => employee.id === obj.id
+    );
 
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
-      setEmployees((prev) => [...prev, { id: id }]);
+      obj.id = count;
+      setEmployees((prev) => [...prev, obj]);
+      setCount(count + 1);
     }
   }
 
   console.log(employees);
   return (
     <div className="App">
-      <AddEmployee handleAddEmployees={handleAddEmployees} />
+      <AddEmployee count={count} handleAddEmployees={handleAddEmployees} />
     </div>
   );
 }
