@@ -42,5 +42,20 @@ Solution:
         1. Employees
     4. In each employee subsection, add delete button, edit button.
 
+    Functions:
+    1. createEmployee - function to create employee profile/object;
+    2. handleAddEmployee - function to add employee information.
+    3. UpdateEmployee - function to update employee information.
+    4. DeleteEmployee - function to delete employee.
+    5. FilterEmployee - function to filter employee.
+
+    Components:
+    1. Employee - card with employee information.
+    2. AddEmployee - component to enter employee information.
+    3. DisplayEmployees - displays employees on page.
+    4. SearchEmployees - used to filter employees, categories, etc.
+
+   
+
 
 

@@ -1,0 +1,44 @@
+Functions:
+    Global variables, arrays:
+    1. Create employees Array, employeesArr.
+    1. createEmployee(inputs: id, name, surname, email, position, department, phone number, image, date)
+        1. Create object, employeeObj;
+        2. Store inputs inside employeeObj;
+
+    2. handleAddEmployee(inputs: employeeObj object)
+        1. Check if employee exists, create filteredEmployee => employee.id;
+        2. if filteredEmployee.length > 0, then do not add.
+            else: 
+                Add to employeesArr;
+
+    3. updateEmployee(inputs: id, updateInfo object)
+        1. Filter employee based on id, filteredEmployee => employee.id;
+        2. Use updateInfo to update filteredEmployee;
+        3. Update employeesArr with, new updated filteredEmployee;
+
+    4. deleteEmployee(inputs: id)
+        1.  Filter employeesArr based on unwanted id, filteredEmployee => !employee.id;
+
+    5. filterEmployee(inputs: employeesArr, field)
+        1. Filter information from employeesArr based on field / rule, filteredInformation => field;
+
+   Components:
+    1. Employee(props: id, name, surname, email, position, department, phone number, image, date)
+        1. Create divs to hold all prop information
+
+    2. AddEmployee()
+        1. Create inputs field to get employee information;
+        2. Create button to submit employee information from field;
+
+    3. DisplayEmployees(inputs: employeesArr)
+        1. Map through employeesArr and display each employee on page;
+
+    4. SearchEmployees(inputs: employeesArr, field)
+        1. Create search bar and button to allow search;
+        2. Filter employeesArr based on field.
+
+
+
+
+
+    
