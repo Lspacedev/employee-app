@@ -1,21 +1,28 @@
 import { useState } from "react";
+import Form from "./Form";
 
 function AddEmployee({ count, handleAddEmployees }) {
-  const [obj, setObj] = useState({});
-
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-
   const [clicked, setClicked] = useState(false);
-  function handleSubmit(id) {
-    console.log(id);
-    handleAddEmployees(id);
+
+  function toggleClicked() {
+    setClicked(!clicked);
   }
+
   return (
     <div>
-      <button onClick={setClicked(true)}>New Employee</button>
-      {clicked ? <div>true</div> : <div>false</div>}
+      <button onClick={toggleClicked}>New Employee</button>
+      <div>{count}</div>
+
+      {clicked ? (
+        <Form
+          handleAddEmployees={handleAddEmployees}
+          toggleClicked={toggleClicked}
+          count={count}
+        />
+      ) : (
+        <div>false</div>
+      )}
+
       {/*<input
         type="text"
         onChange={(e) => {
