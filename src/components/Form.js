@@ -8,6 +8,7 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
     department: "",
     email: "",
     phone: "",
+    edit: false,
   });
   function handleChange(e) {
     e.preventDefault();
