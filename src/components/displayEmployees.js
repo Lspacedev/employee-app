@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Employee from "./employee";
 
 function DisplayEmployees({
   employees,
@@ -6,7 +7,6 @@ function DisplayEmployees({
   handleUpdate,
   handleResubmit,
 }) {
-  const [url, setUrl] = useState("");
   const [obj, setObj] = useState({
     name: "",
     surname: "",
@@ -23,11 +23,10 @@ function DisplayEmployees({
     setObj((prev) => ({ ...prev, [name]: value }));
   }
 
-  let u = "profile";
   return (
-    <div>
+    <div className="Display">
       <h1>Employees</h1>
-      <ul>
+      <ul className="employees-display">
         {employees.map((employee) => (
           <li key={employee.id}>
             {employee.edit ? (
@@ -106,22 +105,15 @@ function DisplayEmployees({
                 </div>
               </div>
             ) : (
-              <div>
-                <div>{employee.name}</div>
-                <div>{employee.surname}</div>
-                <div>{employee.position}</div>
-                <div>{employee.department}</div>
-                <div>{employee.email}</div>
-                <div>{employee.phone}</div>
-                <div>
-                  <img
-                    src={require(`./${employee.pic.replace(
-                      "C:\\fakepath\\",
-                      ""
-                    )}`)}
-                  />
-                </div>
-              </div>
+              <Employee
+                name={employee.name}
+                surname={employee.surname}
+                position={employee.position}
+                department={employee.department}
+                email={employee.email}
+                phone={employee.phone}
+                pic={employee.pic}
+              />
             )}
             <button
               onClick={() => {
