@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Form from "./Form";
-import { IoIosSearch } from "react-icons/io";
 
 function AddEmployee({ count, handleAddEmployees }) {
   const [clicked, setClicked] = useState(false);
@@ -12,19 +11,8 @@ function AddEmployee({ count, handleAddEmployees }) {
   return (
     <div className="Add">
       <div className="Add-div">
-        <div className="logo">Employee App</div>
-        <div className="search-div">
-          <IoIosSearch
-            style={{
-              position: "absolute",
-              top: "10px",
-              left: "10px",
-              fontSize: "1.6rem",
-              marginRight: "0px",
-            }}
-          />
-          <input type="search" />
-        </div>
+        <div className="logo">Employee App {count}</div>
+
         <button onClick={toggleClicked}>New Employee</button>
       </div>
       {clicked && (

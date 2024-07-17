@@ -1,7 +1,16 @@
 import { FaPhone } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 
-function Employee({ name, surname, position, department, email, phone, pic }) {
+function Employee({
+  name,
+  surname,
+  position,
+  department,
+  email,
+  phone,
+  pic,
+  date,
+}) {
   return (
     <div className="Employee">
       <div className="profile-name">
@@ -22,7 +31,7 @@ function Employee({ name, surname, position, department, email, phone, pic }) {
         </div>
         <div className="date">
           <p>Date</p>
-          <p className="department-value">{department}</p>
+          <p className="department-value">{date}</p>
         </div>
       </div>
       <div className="email-phone">

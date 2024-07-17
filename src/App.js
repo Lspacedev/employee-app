@@ -3,9 +3,10 @@ import "./App.css";
 import AddEmployee from "./components/addEmployee";
 import DisplayEmployees from "./components/displayEmployees";
 import { useState } from "react";
+import useLocalStorage from "./components/useLocalStorage";
 
 function App() {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useLocalStorage("cartCount", []);
   const [count, setCount] = useState(0);
   function handleAddEmployees(obj) {
     //find employee
@@ -14,14 +15,14 @@ function App() {
         employee.id === obj.id ||
         employee.surname === obj.surname ||
         employee.email === obj.email ||
-        employee.phone === obj.phone
+        employee.phone === obj.phone,
     );
 
-    console.log(filteredEmployee, obj);
+    console.log("filter", filteredEmployee, obj);
 
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
-      //obj.id = count;
+      obj.date = Date();
       setEmployees((prev) => [...prev, obj]);
       setCount(count + 1);
     }
@@ -29,7 +30,7 @@ function App() {
 
   function handleDeleteEmployee(id) {
     const filteredEmployees = employees.filter(
-      (employee) => employee.id !== id
+      (employee) => employee.id !== id,
     );
     setEmployees(filteredEmployees);
   }
@@ -72,7 +73,10 @@ function App() {
   console.dir(employees);
   return (
     <div className="App">
-      <AddEmployee count={count} handleAddEmployees={handleAddEmployees} />
+      <AddEmployee
+        count={employees.length}
+        handleAddEmployees={handleAddEmployees}
+      />
       <DisplayEmployees
         employees={employees}
         handleDeleteEmployee={handleDeleteEmployee}

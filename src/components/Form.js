@@ -10,13 +10,12 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
     email: "",
     phone: "",
     pic: "",
-    image: "profile.png",
+    date: "",
     edit: false,
   });
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log(name, value);
     setObj((prev) => ({ ...prev, [name]: value }));
   }
 

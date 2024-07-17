@@ -6,7 +6,7 @@ body,
 .App {
   height: 100%;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .App-logo {
@@ -58,23 +58,6 @@ body,
   box-sizing: border-box;
 }
 
-.search-div {
-  border: 1px solid black;
-  border-radius: 40px;
-  position: relative;
-  padding: 10px 50px;
-  background-color: white;
-}
-.Add-div input[type="search"] {
-  border: none;
-}
-.Add-div input[type="search"] {
-  border: none;
-}
-
-.Add-div input[type="search"]:focus {
-  outline: none;
-}
 
 .logo {
   font-size: 1.2rem;
@@ -82,16 +65,42 @@ body,
 }
 
 .Display {
-  grid-column: 3/6;
+  grid-column: 2/6;
   grid-row: 2/11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Display ul {
   list-style: none;
 }
 
+
+.search-div {
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 40px;
+  position: relative;
+  padding: 10px 15px;
+  background-color: white;
+}
+.search-div input[type="search"] {
+  width: 60%;
+  padding: 5px;
+  border: none;
+}
+.search-div  input[type="search"] {
+  border: none;
+}
+
+.search-div input[type="search"]:focus {
+  outline: none;
+}
+
 .Form {
   position: absolute;
+  z-index: 1;
   padding: 0px;
   margin: 0px;
   height: 100%;
@@ -100,6 +109,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .form-div {
@@ -113,9 +123,8 @@ body,
   padding: 60px;
 }
 
-input[type="text"],
+.form-div input[type="text"],
 input[type="email"],
-input[type="search"],
 input[type="file"] {
   width: 100%;
   padding: 12px;
@@ -139,18 +148,25 @@ input[type="submit"] {
 
 .employees-display {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
-  background-color: rgb(231, 231, 231);
+  flex: 4;
+  gap: 50px;
   padding: 25px;
+
+  background-color: whitesmoke;
+
 }
 
 .employees-display li {
-  width: 35%;
+  flex: 25%;
+  height: 400px;
+  width: 300px;
+  max-width: 250px;
+
+  padding: 15px;
 
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px rgb(196, 196, 196);
 }
 
 .Employee {
@@ -164,7 +180,7 @@ input[type="submit"] {
 .employees-display input[type="text"],
 input[type="email"] {
   width: 100%;
-  padding: 1px;
+  padding: 12px;
 
   resize: vertical;
 }
