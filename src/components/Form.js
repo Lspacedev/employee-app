@@ -10,7 +10,7 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
     email: "",
     phone: "",
     pic: "",
-    image: "./profile.png",
+    image: "profile.png",
     edit: false,
   });
   function handleChange(e) {

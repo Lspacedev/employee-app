@@ -23,7 +23,7 @@ function DisplayEmployees({
     setObj((prev) => ({ ...prev, [name]: value }));
   }
 
-  let u = "";
+  let u = "profile";
   return (
     <div>
       <h1>Employees</h1>
@@ -113,6 +113,14 @@ function DisplayEmployees({
                 <div>{employee.department}</div>
                 <div>{employee.email}</div>
                 <div>{employee.phone}</div>
+                <div>
+                  <img
+                    src={require(`./${employee.pic.replace(
+                      "C:\\fakepath\\",
+                      ""
+                    )}`)}
+                  />
+                </div>
               </div>
             )}
             <button
