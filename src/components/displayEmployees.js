@@ -30,7 +30,7 @@ function DisplayEmployees({
         {employees.map((employee) => (
           <li key={employee.id}>
             {employee.edit ? (
-              <div>
+              <div className="update-form">
                 <div className="name">
                   <label htmlFor="fname">
                     Name:
@@ -115,19 +115,25 @@ function DisplayEmployees({
                 pic={employee.pic}
               />
             )}
-            <button
-              onClick={() => {
-                employee.edit
-                  ? handleResubmit(employee.id, obj)
-                  : handleUpdate(employee.id);
-              }}
-            >
-              {employee.edit ? "Update" : "Edit"}
-            </button>
+            <div className="delete-update">
+              <button
+                className="update"
+                onClick={() => {
+                  employee.edit
+                    ? handleResubmit(employee.id, obj)
+                    : handleUpdate(employee.id);
+                }}
+              >
+                {employee.edit ? "Update" : "Edit"}
+              </button>
 
-            <button onClick={() => handleDeleteEmployee(employee.id)}>
-              Delete
-            </button>
+              <button
+                className="delete"
+                onClick={() => handleDeleteEmployee(employee.id)}
+              >
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>

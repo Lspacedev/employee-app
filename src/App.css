@@ -141,13 +141,99 @@ input[type="submit"] {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  background-color: rgb(231, 231, 231);
+  padding: 25px;
 }
 
 .employees-display li {
   width: 35%;
+
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgb(196, 196, 196);
+}
+
+.Employee {
+  padding: 10px;
+}
+
+.update-form {
+  padding: 10px;
+}
+
+.employees-display input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 1px;
+
+  resize: vertical;
+}
+.profile-name {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 5px;
+}
+.profile-pic {
+  display: flex;
 }
 
 .profile-pic img {
   width: 25%;
   height: 25%;
+}
+
+.profile-name .name {
+  font-weight: bold;
+}
+
+.profile-name .position {
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: gray;
+  margin: 5px;
+}
+.department-date {
+  display: flex;
+  justify-content: space-around;
+}
+
+.department-value {
+  font-weight: bold;
+}
+
+.department,
+.date {
+  font-size: 0.8rem;
+}
+
+.email-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0px 20px;
+}
+
+.email-phone div {
+  margin: 2px 0px;
+}
+
+.delete-update {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.update {
+  flex: 50%;
+  padding: 10px 25px;
+  border: none;
+  background-color: grey;
+}
+
+.delete {
+  flex: 50%;
+  padding: 10px 20px;
+  border: none;
+  background-color: grey;
 }
