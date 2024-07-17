@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Image } from "react";
 function Form({ handleAddEmployees, toggleClicked, count }) {
   const [obj, setObj] = useState({
     id: count,
@@ -8,11 +9,14 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
     department: "",
     email: "",
     phone: "",
+    pic: "",
+    image: "./profile.png",
     edit: false,
   });
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
+    console.log(name, value);
     setObj((prev) => ({ ...prev, [name]: value }));
   }
 
@@ -25,6 +29,7 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
   return (
     <div>
       <h3>Employee Information</h3>
+
       <form>
         <div className="name">
           <label htmlFor="fname">
@@ -98,6 +103,18 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
             />
           </label>
         </div>
+        <div className="profile-pic">
+          <label htmlFor="profile-pic">
+            Profile pic:
+            <input
+              type="file"
+              id="profile-pic"
+              name="pic"
+              onChange={(e) => handleChange(e)}
+            />
+          </label>
+        </div>
+
         <input
           type="submit"
           value="submit"

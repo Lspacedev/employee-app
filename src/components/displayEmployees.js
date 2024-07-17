@@ -6,7 +6,7 @@ function DisplayEmployees({
   handleUpdate,
   handleResubmit,
 }) {
-  const [name, setName] = useState("");
+  const [url, setUrl] = useState("");
   const [obj, setObj] = useState({
     name: "",
     surname: "",
@@ -22,7 +22,8 @@ function DisplayEmployees({
     const { name, value } = e.target;
     setObj((prev) => ({ ...prev, [name]: value }));
   }
-  console.log("ppd", name);
+
+  let u = "";
   return (
     <div>
       <h1>Employees</h1>
