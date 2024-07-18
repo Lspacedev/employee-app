@@ -39,7 +39,8 @@ body,
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(10, 10%);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .Add {
   grid-column: 1/6;
@@ -49,7 +50,7 @@ body,
 .Add-div {
   height: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -60,11 +61,20 @@ body,
   border: none;
 }
 
-
 .logo {
+  margin-left: 90px;
   font-size: 1.2rem;
-  font-weight: bold;
+
   font-family: "Courier", Courier, monospace;
+}
+
+.Sidebar {
+  grid-column: 1/2;
+  grid-row: 2/11;
+  padding: 60px 0px;
+}
+.Sidebar div {
+  padding: 15px 0px;
 }
 
 .Display {
@@ -77,8 +87,8 @@ body,
 
 .Display ul {
   list-style: none;
+  width: 90%;
 }
-
 
 .search-div {
   width: 40%;
@@ -93,7 +103,7 @@ body,
   padding: 5px;
   border: none;
 }
-.search-div  input[type="search"] {
+.search-div input[type="search"] {
   border: none;
 }
 
@@ -112,7 +122,6 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .form-div {
@@ -150,7 +159,6 @@ input[type="submit"] {
 }
 
 .employees-display {
-  width: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -159,18 +167,20 @@ input[type="submit"] {
   padding: 25px;
 
   background-color: whitesmoke;
-
+  border-top: 1px solid rgb(160, 160, 160);
 }
 
 .employees-display li {
   flex: 25%;
-  height: 400px;
-  width: 300px;
+  height: 320px;
+
   max-width: 250px;
 
   padding: 10px 15px;
 
   background-color: white;
+  border-radius: 10px;
+  position: relative;
 }
 
 .Employee {
@@ -224,18 +234,19 @@ input[type="email"] {
 
 .department,
 .date {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .email-phone {
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 0px 20px;
 }
 
 .email-phone div {
   margin: 2px 0px;
+  word-break: break-all;
+  font-size: 0.8rem;
 }
 
 .delete-update {
@@ -257,35 +268,13 @@ input[type="email"] {
   border: none;
   background-color: grey;
 }
-
-
-@media (max-width: 768px) {
-  .Display {
-    grid-column: 1/6;
-    grid-row: 2/11;
-
-  }
-  
-  .employees-display {
-    flex-direction: column;
-    align-items: center;
-    
-    margin: 0;
-    padding: 0;
-  }
-
-  .search-div input[type="search"] {
-    width: 60%;
-    padding: 5px;
-    border: none;
-  }
-
-
-
+@media (max-width: 1200px) {
 }
 
+@media (max-width: 768px) {
+}
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
   .App {
     display: flex;
     flex-direction: column;
@@ -293,17 +282,12 @@ input[type="email"] {
     margin: 0;
   }
   .Display {
-   padding: 0;
-   margin: 0;
+    padding: 0;
+    margin: 0;
   }
-  
-  .employees-display {
 
+  .employees-display {
     margin: 0;
     padding: 0;
   }
-
-
-
-
 }

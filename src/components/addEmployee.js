@@ -11,7 +11,7 @@ function AddEmployee({ count, handleAddEmployees }) {
   return (
     <div className="Add">
       <div className="Add-div">
-        <div className="logo">Employee App {count}</div>
+        <div className="logo">Employee App</div>
 
         <button onClick={toggleClicked}>New Employee</button>
       </div>

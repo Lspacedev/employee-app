@@ -4,6 +4,7 @@ import AddEmployee from "./components/addEmployee";
 import DisplayEmployees from "./components/displayEmployees";
 import { useState } from "react";
 import useLocalStorage from "./components/useLocalStorage";
+import Sidebar from "./components/sidebar";
 
 function App() {
   const [employees, setEmployees] = useLocalStorage("cartCount", []);
@@ -15,14 +16,13 @@ function App() {
         employee.id === obj.id ||
         employee.surname === obj.surname ||
         employee.email === obj.email ||
-        employee.phone === obj.phone,
+        employee.phone === obj.phone
     );
 
     console.log("filter", filteredEmployee, obj);
 
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
-      obj.date = Date();
       setEmployees((prev) => [...prev, obj]);
       setCount(count + 1);
     }
@@ -30,7 +30,7 @@ function App() {
 
   function handleDeleteEmployee(id) {
     const filteredEmployees = employees.filter(
-      (employee) => employee.id !== id,
+      (employee) => employee.id !== id
     );
     setEmployees(filteredEmployees);
   }
@@ -77,6 +77,7 @@ function App() {
         count={employees.length}
         handleAddEmployees={handleAddEmployees}
       />
+      <Sidebar />
       <DisplayEmployees
         employees={employees}
         handleDeleteEmployee={handleDeleteEmployee}

@@ -103,6 +103,18 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
               />
             </label>
           </div>
+          <div className="date">
+            <label htmlFor="date">
+              Date:
+              <input
+                type="date"
+                id="date"
+                name="date"
+                onChange={(e) => handleChange(e)}
+                value={obj.date}
+              />
+            </label>
+          </div>
           <div className="profile-pic">
             <label htmlFor="profile-pic">
               Profile pic:

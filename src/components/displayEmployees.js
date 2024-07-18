@@ -15,6 +15,7 @@ function DisplayEmployees({
     department: "",
     email: "",
     phone: "",
+    date: "",
     edit: false,
   });
 
@@ -37,8 +38,8 @@ function DisplayEmployees({
               .match(searchInput.toLowerCase()) ||
             employee.id.toString().match(searchInput) ||
             employee.phone.toString().match(searchInput.toString()) ||
-            employee.email.match(searchInput),
-        ),
+            employee.email.match(searchInput)
+        )
       );
     }
     return () => {
@@ -59,7 +60,6 @@ function DisplayEmployees({
 
   return (
     <div className="Display">
-      <h1>Employees</h1>
       <div className="search-div">
         <IoIosSearch
           style={{
@@ -77,6 +77,7 @@ function DisplayEmployees({
           value={searchInput}
         />
       </div>
+
       <ul className="employees-display">
         {searchResults.length !== 0
           ? searchResults.map((employee) => (
@@ -166,6 +167,18 @@ function DisplayEmployees({
                           name="phone"
                           onChange={(e) => handleChange(e)}
                           value={obj.phone}
+                        />
+                      </label>
+                    </div>
+                    <div className="date">
+                      <label htmlFor="date">
+                        Date:
+                        <input
+                          type="date"
+                          id="date"
+                          name="date"
+                          onChange={(e) => handleChange(e)}
+                          value={obj.date}
                         />
                       </label>
                     </div>
