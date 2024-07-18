@@ -90,7 +90,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
               />
             </label>
           </div>
-          <div className="department">
+          <div className="department-input">
             <label htmlFor="department">
               Department:
               <input
@@ -140,7 +140,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
           </div>
           <div className="profile-pic">
             <label htmlFor="profile-pic">
-              Profile pic:
+              Profile picture:
               <input
                 type="file"
                 id="profile-pic"

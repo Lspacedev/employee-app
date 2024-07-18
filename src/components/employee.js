@@ -10,6 +10,7 @@ function Employee({
   phone,
   pic,
   date,
+  id,
 }) {
   return (
     <div className="Employee">
@@ -19,6 +20,10 @@ function Employee({
           <div>{name + " " + surname}</div>
           <div className="position">{position}</div>
         </div>
+      </div>
+      <div className="id-div">
+        <div className="id">ID Number</div>
+        <div className="id-value">{id}</div>
       </div>
       <div className="department-date">
         <div className="department">

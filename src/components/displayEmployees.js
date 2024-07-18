@@ -39,8 +39,8 @@ function DisplayEmployees({
               .match(searchInput.toLowerCase()) ||
             employee.id.toString().match(searchInput) ||
             employee.phone.toString().match(searchInput.toString()) ||
-            employee.email.match(searchInput)
-        )
+            employee.email.match(searchInput),
+        ),
       );
     }
     return () => {
@@ -106,6 +106,7 @@ function DisplayEmployees({
                   phone={employee.phone}
                   pic={employee.pic}
                   date={employee.date}
+                  id={employee.id}
                 />
               </li>
             ))
@@ -190,7 +191,7 @@ function DisplayEmployees({
                         />
                         <div className="profile-pic2">
                           <label htmlFor="profile-pic2">
-                            Profile pic:
+                            Profile picture:
                             <input
                               type="file"
                               id="profile-pic2"
@@ -212,6 +213,7 @@ function DisplayEmployees({
                     phone={employee.phone}
                     pic={employee.pic}
                     date={employee.date}
+                    id={employee.id}
                   />
                 )}
                 <div className="delete-update">

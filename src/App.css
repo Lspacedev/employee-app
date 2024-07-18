@@ -147,7 +147,12 @@ body,
 }
 
 .form-div form {
-  padding: 60px;
+  padding: 40px;
+}
+
+.form-div h3 {
+  padding: 0px;
+  margin: 0px;
 }
 
 .form-div input[type="text"],
@@ -215,6 +220,7 @@ input[type="email"] {
   padding: 3px 0px;
   margin: 3px 0px;
 }
+
 .profile-name {
   display: flex;
   flex-direction: column;
@@ -223,6 +229,8 @@ input[type="email"] {
 }
 .profile-pic {
   display: flex;
+  margin: 5px;
+
 }
 
 .profile-pic img {
@@ -232,6 +240,7 @@ input[type="email"] {
 
 .profile-name .name {
   font-weight: bold;
+
 }
 
 .profile-name .position {
@@ -266,7 +275,7 @@ input[type="email"] {
 }
 
 .email-phone div {
-  margin: 2px 0px;
+  margin: 6px 0px;
   word-break: break-all;
   font-size: 0.8rem;
 }
@@ -293,6 +302,16 @@ input[type="email"] {
 }
 .update:hover {
   color: #fe9000;
+}
+
+.id {
+  font-size: 0.8rem;
+  color: rgb(117, 117, 117);
+  text-align: start;
+}
+
+.id-value {
+  font-size: 0.9rem;
 }
 
 .delete:hover {
