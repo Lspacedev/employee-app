@@ -9,6 +9,7 @@ import Sidebar from "./components/sidebar";
 function App() {
   const [employees, setEmployees] = useLocalStorage("employees", []);
   const [count, setCount] = useState(0);
+
   function handleAddEmployees(obj) {
     //find employee
     const filteredEmployee = employees.filter(
@@ -62,6 +63,9 @@ function App() {
     }
     if (obj.phone) {
       employee.phone = obj.phone;
+    }
+    if (obj.pic) {
+      employee.pic = obj.pic;
     }
 
     employee.edit = false;

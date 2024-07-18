@@ -20,8 +20,14 @@ function Form({ handleAddEmployees, toggleClicked }) {
   }
 
   function handleImageUpload(e) {
-    let url = URL.createObjectURL(e.target.files[0]);
-    obj.pic = url;
+    let input = document.getElementById("profile-pic");
+    var fReader = new FileReader();
+    fReader.readAsDataURL(input.files[0]);
+    fReader.onloadend = function (event) {
+      obj.pic = event.target.result;
+    };
+    /*let url = URL.createObjectURL(e.target.files[0]);
+    obj.pic = url;*/
   }
 
   function handleSubmit(e) {

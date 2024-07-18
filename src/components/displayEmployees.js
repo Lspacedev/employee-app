@@ -16,6 +16,7 @@ function DisplayEmployees({
     email: "",
     phone: "",
     date: "",
+    pic: "",
     edit: false,
   });
 
@@ -56,6 +57,18 @@ function DisplayEmployees({
     e.preventDefault();
     const { name, value } = e.target;
     setObj((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleImageUpload(e) {
+    let input = document.getElementById("profile-pic2");
+    var fReader = new FileReader();
+    fReader.readAsDataURL(input.files[0]);
+
+    fReader.onloadend = function (event) {
+      setObj({ ...obj, pic: event.target.result });
+    };
+    /*let url = URL.createObjectURL(e.target.files[0]);
+    obj.pic = url;*/
   }
 
   return (
@@ -175,6 +188,17 @@ function DisplayEmployees({
                           placeholder=" Date"
                           onChange={(e) => handleChange(e)}
                         />
+                        <div className="profile-pic2">
+                          <label htmlFor="profile-pic2">
+                            Profile pic:
+                            <input
+                              type="file"
+                              id="profile-pic2"
+                              name="pic"
+                              onChange={(e) => handleImageUpload(e)}
+                            />
+                          </label>
+                        </div>
                       </label>
                     </div>
                   </div>
