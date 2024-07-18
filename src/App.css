@@ -59,6 +59,11 @@ body,
   margin: 15px;
   box-sizing: border-box;
   border: none;
+  background-color: #fe9000;
+  color: white;
+}
+.Add-div button:hover {
+  background-color: #094074;
 }
 
 .logo {
@@ -66,15 +71,18 @@ body,
   font-size: 1.2rem;
 
   font-family: "Courier", Courier, monospace;
+  color: #094074;
 }
 
 .Sidebar {
   grid-column: 1/2;
   grid-row: 2/11;
   padding: 60px 0px;
+  text-align: center;
 }
 .Sidebar div {
   padding: 15px 0px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .Display {
@@ -93,7 +101,7 @@ body,
 .search-div {
   margin: 10px 0px;
   width: 60%;
-  border: 1px solid black;
+  border: 1px solid rgb(168, 168, 168);
   border-radius: 40px;
   position: relative;
   padding: 10px 15px;
@@ -111,7 +119,13 @@ body,
 .search-div input[type="search"]:focus {
   outline: none;
 }
-
+.search-div input[type="search"]::placeholder {
+  font-size: 1rem;
+  text-align: center;
+}
+#search-icon {
+  color: gray;
+}
 .Form {
   position: absolute;
   z-index: 1;
@@ -147,7 +161,7 @@ input[type="file"] {
 
 input[type="submit"] {
   width: 100%;
-  background-color: #0b0a07;
+  background-color: #fe9000;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -155,8 +169,8 @@ input[type="submit"] {
 }
 
 .form-div input[type="submit"]:hover {
-  background-color: #fe9000;
-  color: #0b0a07;
+  background-color: #094074;
+  color: white;
 }
 
 .employees-display {
@@ -168,7 +182,6 @@ input[type="submit"] {
   padding: 25px;
 
   background-color: whitesmoke;
-  border-top: 1px solid rgb(160, 160, 160);
 }
 
 .employees-display li {
@@ -264,6 +277,7 @@ input[type="email"] {
   display: flex;
   padding: 0px;
   gap: 100px;
+  color: #094074;
 }
 
 .update {
@@ -277,7 +291,13 @@ input[type="email"] {
   border: none;
   background-color: white;
 }
+.update:hover {
+  color: #fe9000;
+}
 
+.delete:hover {
+  color: #fe9000;
+}
 #email {
   padding: 12px;
 }
