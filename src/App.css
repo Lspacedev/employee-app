@@ -91,7 +91,8 @@ body,
 }
 
 .search-div {
-  width: 40%;
+  margin: 10px 0px;
+  width: 60%;
   border: 1px solid black;
   border-radius: 40px;
   position: relative;
@@ -181,22 +182,25 @@ input[type="submit"] {
   background-color: white;
   border-radius: 10px;
   position: relative;
+  grid-template-rows: auto auto;
+  box-shadow: 1px 1px 5px rgb(187, 187, 187);
 }
 
 .Employee {
   padding: 10px;
+  grid-template-rows: auto auto auto;
 }
 
-.update-form {
-  padding: 10px;
-}
-
-.employees-display input[type="text"],
+.update-form input[type="text"],
 input[type="email"] {
-  width: 100%;
-  padding: 12px;
+  padding: 5px 40px;
+  margin: 5px 0px;
+  text-align: center;
+}
 
-  resize: vertical;
+.update-form input[type="email"] {
+  padding: 5px 0px;
+  margin: 5px 0px;
 }
 .profile-name {
   display: flex;
@@ -220,7 +224,8 @@ input[type="email"] {
 .profile-name .position {
   font-weight: bold;
   font-size: 0.7rem;
-  color: gray;
+  color: rgb(117, 117, 117);
+  text-align: start;
   margin: 5px;
 }
 .department-date {
@@ -228,13 +233,17 @@ input[type="email"] {
   justify-content: space-around;
 }
 
-.department-value {
+.department-value,
+.date-value {
   font-weight: bold;
+  color: black;
+  text-align: start;
 }
 
 .department,
 .date {
   font-size: 0.7rem;
+  color: rgb(117, 117, 117);
 }
 
 .email-phone {
@@ -250,31 +259,43 @@ input[type="email"] {
 }
 
 .delete-update {
+  position: absolute;
+  bottom: 0;
   display: flex;
-  justify-content: center;
-  gap: 2px;
+  padding: 0px;
+  gap: 100px;
 }
 
 .update {
-  flex: 50%;
   padding: 10px 25px;
   border: none;
-  background-color: grey;
+  background-color: white;
 }
 
 .delete {
-  flex: 50%;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
-  background-color: grey;
+  background-color: white;
 }
+
+#email {
+  padding: 12px;
+}
+
 @media (max-width: 1200px) {
 }
 
 @media (max-width: 768px) {
+  .delete-update {
+    gap: 80px;
+  }
+  .search-div {
+    margin: 10px 0px;
+    width: 80%;
+  }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .App {
     display: flex;
     flex-direction: column;
@@ -289,5 +310,62 @@ input[type="email"] {
   .employees-display {
     margin: 0;
     padding: 0;
+  }
+  .employees-display li {
+    flex: 100%;
+  }
+
+  .Sidebar {
+    padding: 20px 0px;
+  }
+  .Sidebar div {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2px;
+  }
+  .search-div {
+    margin: 10px 0px;
+    width: 70%;
+    border: 1px solid black;
+    position: relative;
+  }
+}
+
+@media (max-width: 320px) {
+  .Add-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Add-div button {
+    padding: 12px 30px;
+    margin: 15px;
+  }
+
+  .logo {
+    margin: 15px;
+  }
+  .Sidebar {
+    padding: 20px 0px;
+  }
+  .Sidebar div {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2px;
+  }
+
+  .search-div {
+    margin: 10px 0px;
+    width: 60%;
+    border: 1px solid black;
+    position: relative;
+  }
+  .search-div input[type="search"] {
+    margin: 0px;
+    width: 60%;
+  }
+
+  #search-icon {
+    top: 0;
   }
 }

@@ -26,12 +26,12 @@ function Employee({
       </div>
       <div className="department-date">
         <div className="department">
-          <p>Departement</p>
+          <p>Department</p>
           <p className="department-value">{department}</p>
         </div>
         <div className="date">
           <p>Date</p>
-          <p className="department-value">{date}</p>
+          <p className="date-value">{date}</p>
         </div>
       </div>
       <div className="email-phone">

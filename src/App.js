@@ -7,7 +7,7 @@ import useLocalStorage from "./components/useLocalStorage";
 import Sidebar from "./components/sidebar";
 
 function App() {
-  const [employees, setEmployees] = useLocalStorage("cartCount", []);
+  const [employees, setEmployees] = useLocalStorage("employees", []);
   const [count, setCount] = useState(0);
   function handleAddEmployees(obj) {
     //find employee

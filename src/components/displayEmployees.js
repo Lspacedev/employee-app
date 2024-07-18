@@ -62,6 +62,7 @@ function DisplayEmployees({
     <div className="Display">
       <div className="search-div">
         <IoIosSearch
+          id="search-icon"
           style={{
             position: "absolute",
             top: "10px",
@@ -73,6 +74,7 @@ function DisplayEmployees({
         />
         <input
           type="search"
+          placeholder="Search"
           onChange={handleSearchChange}
           value={searchInput}
         />
@@ -100,11 +102,11 @@ function DisplayEmployees({
                   <div className="update-form">
                     <div className="name">
                       <label htmlFor="fname">
-                        Name:
                         <input
                           type="text"
                           id="fname"
                           name="name"
+                          placeholder="Name"
                           onChange={(e) => handleChange(e)}
                           value={obj.name}
                         />
@@ -112,11 +114,11 @@ function DisplayEmployees({
                     </div>
                     <div className="surname">
                       <label htmlFor="lname">
-                        Surname:
                         <input
                           type="text"
                           id="lname"
                           name="surname"
+                          placeholder="Surname"
                           onChange={(e) => handleChange(e)}
                           value={obj.surname}
                         />
@@ -124,11 +126,11 @@ function DisplayEmployees({
                     </div>
                     <div className="position">
                       <label htmlFor="position">
-                        Position:
                         <input
                           type="text"
                           id="position"
                           name="position"
+                          placeholder="Position"
                           onChange={(e) => handleChange(e)}
                           value={obj.position}
                         />
@@ -136,35 +138,35 @@ function DisplayEmployees({
                     </div>
                     <div className="department">
                       <label htmlFor="department">
-                        Department:
                         <input
                           type="text"
                           id="department"
                           name="department"
+                          placeholder="Department"
                           onChange={(e) => handleChange(e)}
                           value={obj.department}
                         />
                       </label>
                     </div>
                     <div className="email">
-                      <label htmlFor="email">
-                        Email:
+                      <label htmlFor="edit-email">
                         <input
                           type="email"
-                          id="email"
+                          id="edit-email"
                           name="email"
+                          placeholder="Email"
                           onChange={(e) => handleChange(e)}
                           value={obj.email}
                         />
                       </label>
                     </div>
                     <div className="phone-number">
-                      <label htmlFor="phone-number">
-                        Phone number:
+                      <label htmlFor="edit-phone-number">
                         <input
                           type="text"
-                          id="phone-number"
+                          id="edit-phone-number"
                           name="phone"
+                          placeholder="Phone number"
                           onChange={(e) => handleChange(e)}
                           value={obj.phone}
                         />
@@ -172,11 +174,11 @@ function DisplayEmployees({
                     </div>
                     <div className="date">
                       <label htmlFor="date">
-                        Date:
                         <input
                           type="date"
                           id="date"
                           name="date"
+                          placeholder=" Date"
                           onChange={(e) => handleChange(e)}
                           value={obj.date}
                         />
