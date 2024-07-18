@@ -68,6 +68,7 @@ function DisplayEmployees({
             left: "10px",
             fontSize: "1.6rem",
             marginRight: "0px",
+            padding: "0px",
           }}
         />
         <input
