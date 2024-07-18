@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Image } from "react";
-function Form({ handleAddEmployees, toggleClicked, count }) {
+function Form({ handleAddEmployees, toggleClicked }) {
   const [obj, setObj] = useState({
-    id: count,
+    id: "",
     name: "",
     surname: "",
     position: "",
@@ -17,6 +17,11 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
     e.preventDefault();
     const { name, value } = e.target;
     setObj((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleImageUpload(e) {
+    let url = URL.createObjectURL(e.target.files[0]);
+    obj.pic = url;
   }
 
   function handleSubmit(e) {
@@ -52,6 +57,18 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
                 name="surname"
                 onChange={(e) => handleChange(e)}
                 value={obj.surname}
+              />
+            </label>
+          </div>
+          <div className="id-number">
+            <label htmlFor="id-number">
+              ID Number:
+              <input
+                type="text"
+                id="id-number"
+                name="id"
+                onChange={(e) => handleChange(e)}
+                value={obj.id}
               />
             </label>
           </div>
@@ -122,7 +139,7 @@ function Form({ handleAddEmployees, toggleClicked, count }) {
                 type="file"
                 id="profile-pic"
                 name="pic"
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => handleImageUpload(e)}
               />
             </label>
           </div>

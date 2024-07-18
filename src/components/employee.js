@@ -14,11 +14,7 @@ function Employee({
   return (
     <div className="Employee">
       <div className="profile-name">
-        <div className="profile-pic">
-          {pic && (
-            <img src={require(`./${pic.replace("C:\\fakepath\\", "")}`)} />
-          )}
-        </div>
+        <div className="profile-pic">{pic && <img src={pic} />}</div>
         <div className="name">
           <div>{name + " " + surname}</div>
           <div className="position">{position}</div>

@@ -108,7 +108,6 @@ function DisplayEmployees({
                           name="name"
                           placeholder="Name"
                           onChange={(e) => handleChange(e)}
-                          value={obj.name}
                         />
                       </label>
                     </div>
@@ -120,7 +119,6 @@ function DisplayEmployees({
                           name="surname"
                           placeholder="Surname"
                           onChange={(e) => handleChange(e)}
-                          value={obj.surname}
                         />
                       </label>
                     </div>
@@ -132,7 +130,6 @@ function DisplayEmployees({
                           name="position"
                           placeholder="Position"
                           onChange={(e) => handleChange(e)}
-                          value={obj.position}
                         />
                       </label>
                     </div>
@@ -144,7 +141,6 @@ function DisplayEmployees({
                           name="department"
                           placeholder="Department"
                           onChange={(e) => handleChange(e)}
-                          value={obj.department}
                         />
                       </label>
                     </div>
@@ -156,7 +152,6 @@ function DisplayEmployees({
                           name="email"
                           placeholder="Email"
                           onChange={(e) => handleChange(e)}
-                          value={obj.email}
                         />
                       </label>
                     </div>
@@ -168,7 +163,6 @@ function DisplayEmployees({
                           name="phone"
                           placeholder="Phone number"
                           onChange={(e) => handleChange(e)}
-                          value={obj.phone}
                         />
                       </label>
                     </div>
@@ -180,7 +174,6 @@ function DisplayEmployees({
                           name="date"
                           placeholder=" Date"
                           onChange={(e) => handleChange(e)}
-                          value={obj.date}
                         />
                       </label>
                     </div>

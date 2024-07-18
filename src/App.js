@@ -24,7 +24,6 @@ function App() {
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
       setEmployees((prev) => [...prev, obj]);
-      setCount(count + 1);
     }
   }
 
@@ -73,10 +72,7 @@ function App() {
   console.dir(employees);
   return (
     <div className="App">
-      <AddEmployee
-        count={employees.length}
-        handleAddEmployees={handleAddEmployees}
-      />
+      <AddEmployee handleAddEmployees={handleAddEmployees} />
       <Sidebar />
       <DisplayEmployees
         employees={employees}
