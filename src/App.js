@@ -5,10 +5,12 @@ import DisplayEmployees from "./components/displayEmployees";
 import { useState } from "react";
 import useLocalStorage from "./components/useLocalStorage";
 import Sidebar from "./components/sidebar";
+import Dashboard from "./components/dashboard";
 
 function App() {
   const [employees, setEmployees] = useLocalStorage("employees", []);
   const [count, setCount] = useState(0);
+  const [page, setPage] = useState("employees-page");
 
   function handleAddEmployees(obj) {
     //find employee
@@ -73,17 +75,25 @@ function App() {
     setEmployees(employeesCopy);
   }
 
+  function handlePageChange(page) {
+    setPage(page);
+  }
+
   console.dir(employees);
   return (
     <div className="App">
       <AddEmployee handleAddEmployees={handleAddEmployees} />
-      <Sidebar />
-      <DisplayEmployees
-        employees={employees}
-        handleDeleteEmployee={handleDeleteEmployee}
-        handleUpdate={handleUpdate}
-        handleResubmit={handleResubmit}
-      />
+      <Sidebar handlePageChange={handlePageChange} />
+      {page === "dashboard-page" ? (
+        <Dashboard employees={employees} />
+      ) : (
+        <DisplayEmployees
+          employees={employees}
+          handleDeleteEmployee={handleDeleteEmployee}
+          handleUpdate={handleUpdate}
+          handleResubmit={handleResubmit}
+        />
+      )}
     </div>
   );
 }
