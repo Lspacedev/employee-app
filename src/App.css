@@ -322,6 +322,11 @@ input[type="email"] {
   padding: 12px;
 }
 
+#profile-pic2 {
+  margin: 5px 0px;
+  padding: 0px;
+}
+
 @media (max-width: 1200px) {
 }
 

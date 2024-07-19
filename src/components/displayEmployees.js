@@ -8,18 +8,6 @@ function DisplayEmployees({
   handleUpdate,
   handleResubmit,
 }) {
-  const [obj, setObj] = useState({
-    name: "",
-    surname: "",
-    position: "",
-    department: "",
-    email: "",
-    phone: "",
-    date: "",
-    pic: "",
-    edit: false,
-  });
-
   const [searchInput, setSearchInput] = useState("");
 
   const [searchResults, setSearchResults] = useState([]);
@@ -39,8 +27,8 @@ function DisplayEmployees({
               .match(searchInput.toLowerCase()) ||
             employee.id.toString().match(searchInput) ||
             employee.phone.toString().match(searchInput.toString()) ||
-            employee.email.match(searchInput),
-        ),
+            employee.email.match(searchInput)
+        )
       );
     }
     return () => {
@@ -52,24 +40,6 @@ function DisplayEmployees({
     e.preventDefault();
     setSearchInput(e.target.value);
   };
-
-  function handleChange(e) {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setObj((prev) => ({ ...prev, [name]: value }));
-  }
-
-  function handleImageUpload(e) {
-    let input = document.getElementById("profile-pic2");
-    var fReader = new FileReader();
-    fReader.readAsDataURL(input.files[0]);
-
-    fReader.onloadend = function (event) {
-      setObj({ ...obj, pic: event.target.result });
-    };
-    /*let url = URL.createObjectURL(e.target.files[0]);
-    obj.pic = url;*/
-  }
 
   return (
     <div className="Display">
@@ -98,6 +68,7 @@ function DisplayEmployees({
           ? searchResults.map((employee) => (
               <li key={employee.id}>
                 <Employee
+                  edit={employee.edit}
                   name={employee.name}
                   surname={employee.surname}
                   position={employee.position}
@@ -107,134 +78,29 @@ function DisplayEmployees({
                   pic={employee.pic}
                   date={employee.date}
                   id={employee.id}
+                  handleDeleteEmployee={handleDeleteEmployee}
+                  handleUpdate={handleUpdate}
+                  handleResubmit={handleResubmit}
                 />
               </li>
             ))
           : employees.map((employee) => (
               <li key={employee.id}>
-                {employee.edit ? (
-                  <div className="update-form">
-                    <div className="name">
-                      <label htmlFor="fname">
-                        <input
-                          type="text"
-                          id="fname"
-                          name="name"
-                          placeholder="Name"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="surname">
-                      <label htmlFor="lname">
-                        <input
-                          type="text"
-                          id="lname"
-                          name="surname"
-                          placeholder="Surname"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="position">
-                      <label htmlFor="position">
-                        <input
-                          type="text"
-                          id="position"
-                          name="position"
-                          placeholder="Position"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="department">
-                      <label htmlFor="department">
-                        <input
-                          type="text"
-                          id="department"
-                          name="department"
-                          placeholder="Department"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="email">
-                      <label htmlFor="edit-email">
-                        <input
-                          type="email"
-                          id="edit-email"
-                          name="email"
-                          placeholder="Email"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="phone-number">
-                      <label htmlFor="edit-phone-number">
-                        <input
-                          type="text"
-                          id="edit-phone-number"
-                          name="phone"
-                          placeholder="Phone number"
-                          onChange={(e) => handleChange(e)}
-                        />
-                      </label>
-                    </div>
-                    <div className="date">
-                      <label htmlFor="date">
-                        <input
-                          type="date"
-                          id="date"
-                          name="date"
-                          placeholder=" Date"
-                          onChange={(e) => handleChange(e)}
-                        />
-                        <div className="profile-pic2">
-                          <label htmlFor="profile-pic2">
-                            Profile picture:
-                            <input
-                              type="file"
-                              id="profile-pic2"
-                              name="pic"
-                              onChange={(e) => handleImageUpload(e)}
-                            />
-                          </label>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                ) : (
-                  <Employee
-                    name={employee.name}
-                    surname={employee.surname}
-                    position={employee.position}
-                    department={employee.department}
-                    email={employee.email}
-                    phone={employee.phone}
-                    pic={employee.pic}
-                    date={employee.date}
-                    id={employee.id}
-                  />
-                )}
-                <div className="delete-update">
-                  <button
-                    className="update"
-                    onClick={() => {
-                      employee.edit
-                        ? handleResubmit(employee.id, obj)
-                        : handleUpdate(employee.id);
-                    }}
-                  >
-                    {employee.edit ? "Update" : "Edit"}
-                  </button>
-
-                  <button
-                    className="delete"
-                    onClick={() => handleDeleteEmployee(employee.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
+                <Employee
+                  edit={employee.edit}
+                  name={employee.name}
+                  surname={employee.surname}
+                  position={employee.position}
+                  department={employee.department}
+                  email={employee.email}
+                  phone={employee.phone}
+                  pic={employee.pic}
+                  date={employee.date}
+                  id={employee.id}
+                  handleDeleteEmployee={handleDeleteEmployee}
+                  handleUpdate={handleUpdate}
+                  handleResubmit={handleResubmit}
+                />
               </li>
             ))}
       </ul>

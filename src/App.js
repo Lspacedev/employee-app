@@ -20,8 +20,6 @@ function App() {
         employee.phone === obj.phone
     );
 
-    console.log("filter", filteredEmployee, obj);
-
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
       setEmployees((prev) => [...prev, obj]);
@@ -39,7 +37,7 @@ function App() {
     const employeesCopy = employees.slice(0);
     let employee = employeesCopy.find((employee) => employee.id === id);
     employee.edit = true;
-    console.log("eee", employee, employeesCopy);
+
     setEmployees(employeesCopy);
   }
 
@@ -69,11 +67,10 @@ function App() {
     }
 
     employee.edit = false;
-    console.log("e00", employee, employeesCopy);
+
     setEmployees(employeesCopy);
   }
 
-  console.dir(employees);
   return (
     <div className="App">
       <AddEmployee handleAddEmployees={handleAddEmployees} />
