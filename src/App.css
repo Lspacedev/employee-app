@@ -230,7 +230,6 @@ input[type="email"] {
 .profile-pic {
   display: flex;
   margin: 5px;
-
 }
 
 .profile-pic img {
@@ -240,7 +239,6 @@ input[type="email"] {
 
 .profile-name .name {
   font-weight: bold;
-
 }
 
 .profile-name .position {
@@ -248,7 +246,7 @@ input[type="email"] {
   font-size: 0.7rem;
   color: rgb(117, 117, 117);
   text-align: start;
-  margin: 5px;
+  margin: 3px;
 }
 .department-date {
   display: flex;
@@ -305,13 +303,16 @@ input[type="email"] {
 }
 
 .id {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: rgb(117, 117, 117);
   text-align: start;
+  padding: 0px;
 }
 
 .id-value {
-  font-size: 0.9rem;
+  font-size: 0.6rem;
+  margin: 0px;
+  text-align: start;
 }
 
 .delete:hover {
