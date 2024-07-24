@@ -39,8 +39,8 @@ function DisplayEmployees({
               .match(searchInput.toLowerCase()) ||
             employee.id.toString().match(searchInput) ||
             employee.phone.toString().match(searchInput.toString()) ||
-            employee.email.match(searchInput),
-        ),
+            employee.email.match(searchInput)
+        )
       );
     }
     return () => {
