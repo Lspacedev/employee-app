@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Employee from "./employee";
+import useLocalStorage from "./useLocalStorage";
 import { IoIosSearch } from "react-icons/io";
 
 function DisplayEmployees({
@@ -20,42 +21,57 @@ function DisplayEmployees({
     edit: false,
   });
 
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useLocalStorage("searchInput", "");
+  const [submittedSearch, setsubmittedSearch] = useLocalStorage(
+    "submittedSearch",
+    ""
+  );
 
   const [searchResults, setSearchResults] = useState([]);
 
   /* Update screen on every change in search input */
 
   useEffect(() => {
-    if (searchInput.length > 0) {
+    if (submittedSearch.length > 0) {
       setSearchResults(
         employees.filter(
           (employee) =>
-            employee.name.toLowerCase().match(searchInput.toLowerCase()) ||
-            employee.surname.toLowerCase().match(searchInput.toLowerCase()) ||
-            employee.position.toLowerCase().match(searchInput.toLowerCase()) ||
+            employee.name.toLowerCase().match(submittedSearch.toLowerCase()) ||
+            employee.surname
+              .toLowerCase()
+              .match(submittedSearch.toLowerCase()) ||
+            employee.position
+              .toLowerCase()
+              .match(submittedSearch.toLowerCase()) ||
             employee.department
               .toLowerCase()
-              .match(searchInput.toLowerCase()) ||
-            employee.id.toString().match(searchInput) ||
-            employee.phone.toString().match(searchInput.toString()) ||
-            employee.email.match(searchInput)
+              .match(submittedSearch.toLowerCase()) ||
+            employee.id.toString().match(submittedSearch) ||
+            employee.phone.toString().match(submittedSearch.toString()) ||
+            employee.email.match(submittedSearch)
         )
       );
     }
     return () => {
       setSearchResults([]);
     };
-  }, [employees, searchInput]);
+  }, [employees, submittedSearch]);
 
   const handleSearchChange = (e) => {
     e.preventDefault();
+    if (e.target.value.length === 0) {
+      setsubmittedSearch("");
+    }
     setSearchInput(e.target.value);
   };
+  function handleSearchSubmit() {
+    setsubmittedSearch(searchInput);
+  }
 
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
+
     setObj((prev) => ({ ...prev, [name]: value }));
   }
 
@@ -75,6 +91,7 @@ function DisplayEmployees({
     <div className="Display">
       <div className="search-div">
         <IoIosSearch
+          onClick={handleSearchSubmit}
           id="search-icon"
           style={{
             position: "absolute",

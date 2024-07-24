@@ -322,6 +322,14 @@ input[type="email"] {
   padding: 12px;
 }
 
+#search-icon {
+  color: black;
+}
+
+#search-icon:hover {
+  color: gray;
+}
+
 @media (max-width: 1200px) {
 }
 
