@@ -98,22 +98,22 @@ body,
   width: 90%;
 }
 
+* {
+}
+
 .search-div {
   margin: 10px 0px;
-  width: 60%;
   border: 1px solid rgb(168, 168, 168);
   border-radius: 40px;
   position: relative;
-  padding: 10px 15px;
-  background-color: white;
+  width: 70%;
+  padding: 10px 0px 10px 0px;
+  
 }
 .search-div input[type="search"] {
-  width: 60%;
-  padding: 5px;
+  width: 50%;
   border: none;
-}
-.search-div input[type="search"] {
-  border: none;
+  
 }
 
 .search-div input[type="search"]:focus {
@@ -121,10 +121,31 @@ body,
 }
 .search-div input[type="search"]::placeholder {
   font-size: 1rem;
-  text-align: center;
 }
+
 #search-icon {
   color: gray;
+  height: 100%;
+  padding: 0px 25px;
+  border-radius: 40px 0px 0px 40px;
+}
+
+
+#search-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: gray;
+  height: 100%;
+  margin: 0px;
+  padding: 0px 25px;
+  border: none;
+  border-radius: 0px 40px 40px 0px;
+  border-right: 1px solid rgb(248, 248, 248);
+}
+
+#search-btn:hover {
+  background-color: rgb(222, 222, 222);
 }
 .Form {
   position: absolute;
@@ -322,13 +343,7 @@ input[type="email"] {
   padding: 12px;
 }
 
-#search-icon {
-  color: black;
-}
 
-#search-icon:hover {
-  color: gray;
-}
 
 @media (max-width: 1200px) {
 }
@@ -337,10 +352,7 @@ input[type="email"] {
   .delete-update {
     gap: 80px;
   }
-  .search-div {
-    margin: 10px 0px;
-    width: 80%;
-  }
+  
 }
 
 @media (max-width: 480px) {
@@ -371,12 +383,7 @@ input[type="email"] {
     border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
   }
-  .search-div {
-    margin: 10px 0px;
-    width: 70%;
-    border: 1px solid black;
-    position: relative;
-  }
+  
 }
 
 @media (max-width: 320px) {
@@ -402,18 +409,5 @@ input[type="email"] {
     margin-bottom: 2px;
   }
 
-  .search-div {
-    margin: 10px 0px;
-    width: 60%;
-    border: 1px solid black;
-    position: relative;
-  }
-  .search-div input[type="search"] {
-    margin: 0px;
-    width: 60%;
-  }
 
-  #search-icon {
-    top: 0;
-  }
 }

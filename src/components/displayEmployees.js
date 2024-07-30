@@ -24,7 +24,7 @@ function DisplayEmployees({
   const [searchInput, setSearchInput] = useLocalStorage("searchInput", "");
   const [submittedSearch, setsubmittedSearch] = useLocalStorage(
     "submittedSearch",
-    ""
+    "",
   );
 
   const [searchResults, setSearchResults] = useState([]);
@@ -48,8 +48,8 @@ function DisplayEmployees({
               .match(submittedSearch.toLowerCase()) ||
             employee.id.toString().match(submittedSearch) ||
             employee.phone.toString().match(submittedSearch.toString()) ||
-            employee.email.match(submittedSearch)
-        )
+            employee.email.match(submittedSearch),
+        ),
       );
     }
     return () => {
@@ -91,15 +91,13 @@ function DisplayEmployees({
     <div className="Display">
       <div className="search-div">
         <IoIosSearch
-          onClick={handleSearchSubmit}
           id="search-icon"
           style={{
             position: "absolute",
-            top: "10px",
-            left: "10px",
+            top: "0px",
+            left: "0px",
             fontSize: "1.6rem",
-            marginRight: "0px",
-            padding: "0px",
+            margin: "0px",
           }}
         />
         <input
@@ -108,6 +106,9 @@ function DisplayEmployees({
           onChange={handleSearchChange}
           value={searchInput}
         />
+        <button id="search-btn" onClick={handleSearchSubmit}>
+          search
+        </button>
       </div>
 
       <ul className="employees-display">
