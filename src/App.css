@@ -35,6 +35,9 @@ body,
   color: #61dafb;
 }
 
+* {
+}
+
 .App {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -258,38 +261,49 @@ body,
 }
 
 .Employee {
-  padding: 10px;
+  padding: 0px 0px;
   grid-template-rows: auto auto auto;
   text-align:start;
 }
 
-.update-form input[type="text"],
-input[type="email"] {
-  padding: 3px 40px;
+.update-form input[type="text"] {
+  width: 100%;
+  padding: 3px 0px;
   margin: 3px 0px;
   text-align: center;
 }
 
 .update-form input[type="email"] {
+  width: 100%;
+  padding: 3px 0px;
+  margin: 3px 0px;
+  text-align: center;
+
+}
+
+.update-form input[type="date"] {
+  width: 100%;
   padding: 3px 0px;
   margin: 3px 0px;
 }
+
 
 .profile-name {
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 5px;
+  margin: 6px 0px;
 
 }
 .profile-pic {
   display: flex;
-  margin: 5px;
+  margin: 0px 0px 5px 0px;
+  height: 50px;
 }
 
 .profile-pic img {
-  width: 25%;
-  height: 25%;
+  width: 100%;
+  height: 100%;
 }
 
 .profile-name .name {
@@ -304,14 +318,15 @@ input[type="email"] {
   word-wrap: break-word;
 
   font-weight: bold;
-  font-size: 0.7rem;
-  color: rgb(117, 117, 117);
+  font-size: 0.8rem;
   text-align: start;
-  margin: 3px 0px;
+  margin: 5px 0px;
 }
 .department-date {
   display: flex;
   justify-content: space-between;
+  margin: 5px 0px;
+  padding: 0px;
 }
 
 .department-value,
@@ -319,13 +334,28 @@ input[type="email"] {
   font-weight: bold;
   color: black;
   text-align: start;
+  margin: 0px;
+  padding: 0px;
+  word-break: break-all;
 
 }
 
 .department,
 .date {
-  font-size: 0.7rem;
-  color: rgb(117, 117, 117);
+  font-size: 0.8rem;
+  color: rgb(69, 69, 69);
+  margin: 0px;
+  padding: 0px;
+}
+
+.department p {
+  margin: 2px 0px;
+  padding: 0px;
+}
+
+.date p {
+  margin: 2px 0px;
+  padding: 0px;
 }
 
 .email-phone {
@@ -356,7 +386,7 @@ input[type="email"] {
 }
 
 .delete {
-  padding: 10px 15px;
+  padding: 10px 13px;
   border: none;
   background-color: white;
 }
@@ -365,15 +395,16 @@ input[type="email"] {
 }
 
 .id {
-  font-size: 0.6rem;
-  color: rgb(117, 117, 117);
+  font-size: 0.8rem;
+  color: rgb(69, 69, 69);
+
   text-align: start;
   padding: 0px;
 }
 
 .id-value {
-  font-size: 0.6rem;
-  margin: 0px;
+  font-size: 0.8rem;
+  margin: 2px 0px;
   text-align: start;
 }
 

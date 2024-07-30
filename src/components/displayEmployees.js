@@ -202,7 +202,7 @@ function DisplayEmployees({
                       <label htmlFor="date">
                         <input
                           type="date"
-                          id="date"
+                          id="udate"
                           name="date"
                           placeholder=" Date"
                           onChange={(e) => handleChange(e)}

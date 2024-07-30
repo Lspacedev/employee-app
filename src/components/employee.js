@@ -37,11 +37,11 @@ function Employee({
       </div>
       <div className="email-phone">
         <div className="email">
-          <MdOutlineEmail />
+          <MdOutlineEmail style={{ paddingRight: "5px" }} />
           {email}
         </div>
         <div className="phone">
-          <FaPhone />
+          <FaPhone style={{ paddingRight: "5px" }} />
           {phone}
         </div>
       </div>
