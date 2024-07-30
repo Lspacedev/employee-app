@@ -98,8 +98,6 @@ body,
   width: 90%;
 }
 
-* {
-}
 
 .search-div {
   margin: 10px 0px;
@@ -148,55 +146,89 @@ body,
   background-color: rgb(222, 222, 222);
 }
 .Form {
-  position: absolute;
-  z-index: 1;
+  position: fixed; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 2;
+  cursor: pointer;
   padding: 0px;
   margin: 0px;
-  height: 100%;
-  width: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.form-div {
+.form-div form {
+ 
+  margin: 0 auto 0 auto;
   padding: 25px;
-  box-shadow: 2px 2px 5px black;
-  border-radius: 20px;
+  width: 400px;
+  height: auto;
+  overflow: hidden;
   background-color: white;
 }
 
-.form-div form {
-  padding: 40px;
-}
 
-.form-div h3 {
+.name-surname, .id-number-email, .department-position, .phone-number-date{
+  display: flex;
+  text-align: start;
+  gap: 40px;
   padding: 0px;
   margin: 0px;
+
+}
+#date {
+  padding: 4px 28px;
+}
+#lname, #fname {
+
+}
+.form-div form input {
+
+  margin: 5px 0px;
+  padding: 5px 0px;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 2px;
 }
 
-.form-div input[type="text"],
-input[type="email"],
-input[type="file"] {
-  width: 100%;
-  padding: 12px;
 
-  resize: vertical;
-}
 
-input[type="submit"] {
-  width: 100%;
-  background-color: #fe9000;
-  color: white;
-  padding: 12px 20px;
-  border: none;
+.form-div
+.form-div form label {
+  margin: 0px;
+  padding: 0px;
+  color: rgb(133, 133, 133);
   cursor: pointer;
+
+}
+
+.form-div input[type="submit"] {
+  padding: 15px 50px;
+  width: auto;
+  background-color: #fe9000;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
 }
 
 .form-div input[type="submit"]:hover {
   background-color: #094074;
   color: white;
+}
+
+.form-close {
+  text-align: end;
+  font-size: 1.5rem;
+  margin-right: -50px;
 }
 
 .employees-display {
@@ -228,6 +260,7 @@ input[type="submit"] {
 .Employee {
   padding: 10px;
   grid-template-rows: auto auto auto;
+  text-align:start;
 }
 
 .update-form input[type="text"],
@@ -247,6 +280,7 @@ input[type="email"] {
   flex-direction: column;
   align-items: start;
   margin: 5px;
+
 }
 .profile-pic {
   display: flex;
@@ -260,18 +294,24 @@ input[type="email"] {
 
 .profile-name .name {
   font-weight: bold;
+  width: 200px;
+  word-wrap: break-word;
+
 }
 
 .profile-name .position {
+  width: 200px;
+  word-wrap: break-word;
+
   font-weight: bold;
   font-size: 0.7rem;
   color: rgb(117, 117, 117);
   text-align: start;
-  margin: 3px;
+  margin: 3px 0px;
 }
 .department-date {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .department-value,
@@ -279,6 +319,7 @@ input[type="email"] {
   font-weight: bold;
   color: black;
   text-align: start;
+
 }
 
 .department,
@@ -339,9 +380,6 @@ input[type="email"] {
 .delete:hover {
   color: #fe9000;
 }
-#email {
-  padding: 12px;
-}
 
 
 
@@ -352,6 +390,32 @@ input[type="email"] {
   .delete-update {
     gap: 80px;
   }
+
+  .form-div form {
+ 
+    margin: 0 auto 0 auto;
+    padding: 2px 25px;
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  
+  .name-surname, .id-number-email, .department-position, .phone-number-date{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
+  
+  }
+  .form-div form input {
+    float: right;
+  }
+  
+  
   
 }
 
@@ -383,6 +447,12 @@ input[type="email"] {
     border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
   }
+  .form-close {
+    text-align: end;
+    font-size: 1.5rem;
+    margin-right: 0px;
+  }
+  
   
 }
 
@@ -408,6 +478,43 @@ input[type="email"] {
     border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
   }
+  .form-div form input {
+    float: none;
+    width: 100%;
+  }
+  #date {
+    padding: 4px 0px;
+  }
 
+  .form-div h3 {
+    font-size: 1rem;
+  }
+
+  .Form {
+    overflow-y: scroll;
+
+  }
+
+  .form-div {
+    overflow-y: scroll;
+
+  }
+
+  .form-div form {
+    overflow-y: scroll;
+    padding-top: 0px;
+    padding-bottom: 10px;
+  }
+
+  .form-div form input {
+
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+  }
+  
+  
 
 }

@@ -17,20 +17,24 @@ function App() {
         employee.id === obj.id ||
         employee.surname === obj.surname ||
         employee.email === obj.email ||
-        employee.phone === obj.phone
+        employee.phone === obj.phone,
     );
 
     console.log("filter", filteredEmployee, obj);
 
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
-      setEmployees((prev) => [...prev, obj]);
+      if (obj.name === "" || obj.surname === "") {
+        alert("PLease enter employee name and surname.");
+      } else {
+        setEmployees((prev) => [...prev, obj]);
+      }
     }
   }
 
   function handleDeleteEmployee(id) {
     const filteredEmployees = employees.filter(
-      (employee) => employee.id !== id
+      (employee) => employee.id !== id,
     );
     setEmployees(filteredEmployees);
   }

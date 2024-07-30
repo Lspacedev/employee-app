@@ -36,13 +36,20 @@ function Form({ handleAddEmployees, toggleClicked }) {
     toggleClicked();
   }
 
+  function handleFormClose() {
+    toggleClicked();
+  }
+
   return (
     <div className="Form">
       <div className="form-div">
-        <h3>Employee Information</h3>
-
+        <div className="form-close" onClick={handleFormClose}>
+          x
+        </div>
         <form>
-          <div className="name">
+          <h3>Enter employee information</h3>
+
+          <div className="name-surname">
             <label htmlFor="fname">
               Name:
               <input
@@ -53,8 +60,6 @@ function Form({ handleAddEmployees, toggleClicked }) {
                 value={obj.name}
               />
             </label>
-          </div>
-          <div className="surname">
             <label htmlFor="lname">
               Surname:
               <input
@@ -66,7 +71,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
               />
             </label>
           </div>
-          <div className="id-number">
+          <div className="id-number-email">
             <label htmlFor="id-number">
               ID Number:
               <input
@@ -77,32 +82,6 @@ function Form({ handleAddEmployees, toggleClicked }) {
                 value={obj.id}
               />
             </label>
-          </div>
-          <div className="position">
-            <label htmlFor="position">
-              Position:
-              <input
-                type="text"
-                id="position"
-                name="position"
-                onChange={(e) => handleChange(e)}
-                value={obj.position}
-              />
-            </label>
-          </div>
-          <div className="department-input">
-            <label htmlFor="department">
-              Department:
-              <input
-                type="text"
-                id="department"
-                name="department"
-                onChange={(e) => handleChange(e)}
-                value={obj.department}
-              />
-            </label>
-          </div>
-          <div className="email">
             <label htmlFor="email">
               Email:
               <input
@@ -114,9 +93,33 @@ function Form({ handleAddEmployees, toggleClicked }) {
               />
             </label>
           </div>
-          <div className="phone-number">
+
+          <div className="department-position">
+            <label htmlFor="department">
+              Department:
+              <input
+                type="text"
+                id="department"
+                name="department"
+                onChange={(e) => handleChange(e)}
+                value={obj.department}
+              />
+            </label>
+            <label htmlFor="position">
+              Position:
+              <input
+                type="text"
+                id="position"
+                name="position"
+                onChange={(e) => handleChange(e)}
+                value={obj.position}
+              />
+            </label>
+          </div>
+
+          <div className="phone-number-date">
             <label htmlFor="phone-number">
-              Phone number:
+              Phone:
               <input
                 type="text"
                 id="phone-number"
@@ -125,8 +128,6 @@ function Form({ handleAddEmployees, toggleClicked }) {
                 value={obj.phone}
               />
             </label>
-          </div>
-          <div className="date">
             <label htmlFor="date">
               Date:
               <input
@@ -138,6 +139,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
               />
             </label>
           </div>
+
           <div className="profile-pic">
             <label htmlFor="profile-pic">
               Profile picture:
