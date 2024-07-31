@@ -20,8 +20,6 @@ function App() {
         employee.phone === obj.phone,
     );
 
-    console.log("filter", filteredEmployee, obj);
-
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
       if (obj.name === "" || obj.surname === "") {
@@ -43,7 +41,6 @@ function App() {
     const employeesCopy = employees.slice(0);
     let employee = employeesCopy.find((employee) => employee.id === id);
     employee.edit = true;
-    console.log("eee", employee, employeesCopy);
     setEmployees(employeesCopy);
   }
 
@@ -55,6 +52,9 @@ function App() {
     }
     if (obj.surname) {
       employee.surname = obj.surname;
+    }
+    if (obj.id) {
+      employee.id = obj.id;
     }
     if (obj.position) {
       employee.position = obj.position;
@@ -72,12 +72,38 @@ function App() {
       employee.pic = obj.pic;
     }
 
+    /*switch (true) {
+      case obj.name !== "":
+        employee.name = obj.name;
+
+      case obj.surname !== "":
+        employee.surname = obj.surname;
+
+      case obj.id !== "":
+        employee.id = obj.id;
+
+      case obj.position !== "":
+        employee.position = obj.position;
+
+      case obj.department !== "":
+        employee.department = obj.department;
+
+      case obj.email !== "":
+        employee.email = obj.email;
+
+      case obj.phone !== "":
+        employee.phone = obj.phone;
+
+      case obj.pic !== "":
+        employee.pic = obj.pic;
+      default:
+        alert("The end");
+        break;
+    }*/
     employee.edit = false;
-    console.log("e00", employee, employeesCopy);
     setEmployees(employeesCopy);
   }
 
-  console.dir(employees);
   return (
     <div className="App">
       <AddEmployee handleAddEmployees={handleAddEmployees} />
