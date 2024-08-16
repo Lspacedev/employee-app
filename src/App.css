@@ -3,160 +3,131 @@ body,
 #root {
   height: 100vh;
 }
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .App {
   height: 100%;
   text-align: center;
   background-color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-* {
-}
-
-.App {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(10, 10%);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-.Add {
-  grid-column: 1/6;
-  grid-row: 1/2;
 }
 
 .Add-div {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .Add-div button {
   padding: 12px 30px;
-  margin: 15px;
+
   box-sizing: border-box;
   border: none;
   background-color: #fe9000;
   color: white;
+  cursor: pointer;
 }
 .Add-div button:hover {
   background-color: #094074;
 }
 
 .logo {
-  margin-left: 90px;
   font-size: 1.2rem;
-
-  font-family: "Courier", Courier, monospace;
+  font-weight: bold;
   color: #094074;
+  margin-bottom: 30px;
 }
 
 .Sidebar {
   grid-column: 1/2;
-  grid-row: 2/11;
-  padding: 60px 0px;
+  grid-row: 1/11;
+  padding: 0px 0px;
   text-align: center;
 }
 .Sidebar div {
   padding: 15px 0px;
-  border-bottom: 1px solid lightgrey;
+}
+
+.Main {
+  grid-column: 2/6;
+  grid-row: 1/11;
+  display: flex;
+  flex-direction: column;
 }
 
 .Display {
-  grid-column: 2/6;
-  grid-row: 2/11;
+  width: inherit;
+  height: inherit;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+}
+
+.search-div {
+  flex: 90%;
+  max-width: 500px;
+  height: 40px;
+  padding: 0px;
+
+  display: flex;
+  border-radius: 40px;
+  border: 1px solid #bbb;
+}
+
+.search-div input[type="search"] {
+  flex: 6;
+  margin: 0px;
+  border: none;
+}
+#search-icon-div {
+  flex: 1;
+  height: 100%;
+  border-radius: 40px 0px 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#search-icon {
+  margin: 0px;
+  color: rgb(189, 189, 189);
+}
+
+#search-btn {
+  flex: 1;
+  margin: 0px;
+  border-radius: 0px 40px 40px 0px;
+  border: none;
+  cursor: pointer;
+}
+#search-btn:hover {
+  background-color: rgb(216, 216, 216);
+}
+.search-icon-btn {
+  display: none;
 }
 
 .Display ul {
   list-style: none;
-  width: 90%;
-}
-
-
-.search-div {
-  margin: 10px 0px;
-  border: 1px solid rgb(168, 168, 168);
-  border-radius: 40px;
-  position: relative;
-  width: 70%;
-  padding: 10px 0px 10px 0px;
-  
-}
-.search-div input[type="search"] {
-  width: 50%;
-  border: none;
-  
-}
-
-.search-div input[type="search"]:focus {
-  outline: none;
-}
-.search-div input[type="search"]::placeholder {
-  font-size: 1rem;
-}
-
-#search-icon {
-  color: gray;
-  height: 100%;
-  padding: 0px 25px;
-  border-radius: 40px 0px 0px 40px;
-}
-
-
-#search-btn {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  color: gray;
-  height: 100%;
+  width: inherit;
+  height: 100vh;
   margin: 0px;
-  padding: 0px 25px;
-  border: none;
-  border-radius: 0px 40px 40px 0px;
-  border-right: 1px solid rgb(248, 248, 248);
+  background-color: lightgray;
 }
 
-#search-btn:hover {
-  background-color: rgb(222, 222, 222);
-}
 .Form {
-  position: fixed; 
-  width: 100%; 
-  height: 100%; 
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
   cursor: pointer;
   padding: 0px;
@@ -168,7 +139,6 @@ body,
 }
 
 .form-div form {
- 
   margin: 0 auto 0 auto;
   padding: 25px;
   width: 400px;
@@ -177,23 +147,23 @@ body,
   background-color: white;
 }
 
-
-.name-surname, .id-number-email, .department-position, .phone-number-date{
+.name-surname,
+.id-number-email,
+.department-position,
+.phone-number-date {
   display: flex;
   text-align: start;
   gap: 40px;
   padding: 0px;
   margin: 0px;
-
 }
 #date {
   padding: 4px 28px;
 }
-#lname, #fname {
-
+#lname,
+#fname {
 }
 .form-div form input {
-
   margin: 5px 0px;
   padding: 5px 0px;
   outline: none;
@@ -201,15 +171,11 @@ body,
   border-radius: 2px;
 }
 
-
-
-.form-div
-.form-div form label {
+.form-div .form-div form label {
   margin: 0px;
   padding: 0px;
   color: rgb(133, 133, 133);
   cursor: pointer;
-
 }
 
 .form-div input[type="submit"] {
@@ -232,6 +198,7 @@ body,
   text-align: end;
   font-size: 1.5rem;
   margin-right: -50px;
+  cursor: pointer;
 }
 
 .employees-display {
@@ -240,7 +207,6 @@ body,
   flex-wrap: wrap;
   flex: 4;
   gap: 50px;
-  padding: 25px;
 
   background-color: whitesmoke;
 }
@@ -250,54 +216,84 @@ body,
   height: 320px;
 
   max-width: 250px;
-
-  padding: 10px 15px;
+  padding: 0px 15px;
 
   background-color: white;
   border-radius: 10px;
-  position: relative;
-  grid-template-rows: auto auto;
+
   box-shadow: 1px 1px 5px rgb(187, 187, 187);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.employees-display li div {
+  padding: 0px;
+  margin: 0px;
 }
 
 .Employee {
+  height: 250px;
   padding: 0px 0px;
-  grid-template-rows: auto auto auto;
-  text-align:start;
+
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.update-form {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .update-form input[type="text"] {
   width: 100%;
-  padding: 3px 0px;
-  margin: 3px 0px;
-  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  text-align: start;
+  border: none;
+}
+.update-form input[type="text"]:focus {
+  background-color: #fff6e9;
+  border-bottom: 1px solid #bbb;
+  outline: none;
 }
 
 .update-form input[type="email"] {
   width: 100%;
-  padding: 3px 0px;
-  margin: 3px 0px;
-  text-align: center;
-
+  padding: 0px;
+  margin: 0px;
+  text-align: start;
+  border: none;
+}
+.update-form input[type="email"]:focus {
+  background-color: #fff6e9;
+  border-bottom: 1px solid #bbb;
+  outline: none;
 }
 
 .update-form input[type="date"] {
-  width: 100%;
   padding: 3px 0px;
-  margin: 3px 0px;
+  margin: 3px 10px;
+  border: none;
+  cursor: pointer;
 }
 
+.profile-pic2 {
+  font-size: 0.8rem;
+}
 
 .profile-name {
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 6px 0px;
-
+  margin: 0px;
 }
 .profile-pic {
   display: flex;
-  margin: 0px 0px 5px 0px;
+  margin: 0px;
   height: 50px;
 }
 
@@ -310,7 +306,6 @@ body,
   font-weight: bold;
   width: 200px;
   word-wrap: break-word;
-
 }
 
 .profile-name .position {
@@ -320,12 +315,12 @@ body,
   font-weight: bold;
   font-size: 0.8rem;
   text-align: start;
-  margin: 5px 0px;
+  margin: 0px;
 }
 .department-date {
   display: flex;
   justify-content: space-between;
-  margin: 5px 0px;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -337,7 +332,6 @@ body,
   margin: 0px;
   padding: 0px;
   word-break: break-all;
-
 }
 
 .department,
@@ -349,12 +343,12 @@ body,
 }
 
 .department p {
-  margin: 2px 0px;
+  margin: 0px;
   padding: 0px;
 }
 
 .date p {
-  margin: 2px 0px;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -365,30 +359,30 @@ body,
 }
 
 .email-phone div {
-  margin: 6px 0px;
+  margin: 0px;
   word-break: break-all;
   font-size: 0.8rem;
 }
-
+.cancel-update {
+  text-align: end;
+  cursor: pointer;
+}
 .delete-update {
-  position: absolute;
-  bottom: 0;
   display: flex;
   padding: 0px;
-  gap: 100px;
-  color: #094074;
+  justify-content: space-between;
 }
 
 .update {
-  padding: 10px 25px;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 .delete {
-  padding: 10px 13px;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 .update:hover {
   color: #fe9000;
@@ -404,7 +398,7 @@ body,
 
 .id-value {
   font-size: 0.8rem;
-  margin: 2px 0px;
+  margin: 0px;
   text-align: start;
 }
 
@@ -412,7 +406,27 @@ body,
   color: #fe9000;
 }
 
-
+.date-image {
+  display: flex;
+  gap: 25px;
+  padding: 0px;
+}
+.date-image input[type="date"] {
+  flex: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+.date-image input[type="date"]:focus {
+  flex: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+.date-image input[type="file"] {
+  background-color: #094074;
+}
+.hidden {
+  display: none;
+}
 
 @media (max-width: 1200px) {
 }
@@ -423,7 +437,6 @@ body,
   }
 
   .form-div form {
- 
     margin: 0 auto 0 auto;
     padding: 2px 25px;
     width: 70%;
@@ -431,23 +444,21 @@ body,
     overflow: hidden;
     background-color: white;
   }
-  
-  
-  .name-surname, .id-number-email, .department-position, .phone-number-date{
+
+  .name-surname,
+  .id-number-email,
+  .department-position,
+  .phone-number-date {
     display: flex;
     flex-direction: column;
     text-align: start;
     gap: 0px;
     padding: 0px;
     margin: 0px;
-  
   }
   .form-div form input {
     float: right;
   }
-  
-  
-  
 }
 
 @media (max-width: 480px) {
@@ -474,8 +485,6 @@ body,
     padding: 20px 0px;
   }
   .Sidebar div {
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
   }
   .form-close {
@@ -483,8 +492,12 @@ body,
     font-size: 1.5rem;
     margin-right: 0px;
   }
-  
-  
+  .header {
+    flex-direction: column;
+  }
+  .search-div {
+    width: 100%;
+  }
 }
 
 @media (max-width: 320px) {
@@ -505,8 +518,6 @@ body,
     padding: 20px 0px;
   }
   .Sidebar div {
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
   }
   .form-div form input {
@@ -523,12 +534,10 @@ body,
 
   .Form {
     overflow-y: scroll;
-
   }
 
   .form-div {
     overflow-y: scroll;
-
   }
 
   .form-div form {
@@ -538,14 +547,10 @@ body,
   }
 
   .form-div form input {
-
     margin: 0px;
     padding: 0px;
     outline: none;
     border: 1px solid #bbb;
     border-radius: 2px;
   }
-  
-  
-
 }

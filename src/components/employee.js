@@ -47,11 +47,29 @@ function Employee({
     /*let url = URL.createObjectURL(e.target.files[0]);
     obj.pic = url;*/
   }
+  function handleEmployeeUpdate() {
+    handleResubmit(id, obj);
+    setObj({
+      id: "",
+      name: "",
+      surname: "",
+      position: "",
+      department: "",
+      email: "",
+      phone: "",
+      date: "",
+      pic: "",
+      edit: false,
+    });
+  }
 
   return (
     <div>
       {edit === true ? (
         <div className="update-form">
+          <div className="cancel-update" onClick={() => handleResubmit(id)}>
+            x
+          </div>
           <div className="name">
             <label htmlFor="fname">
               <input
@@ -129,27 +147,26 @@ function Employee({
               />
             </label>
           </div>
-          <div className="date">
-            <label htmlFor="date">
-              <input
-                type="date"
-                id="udate"
-                name="date"
-                placeholder=" Date"
-                onChange={(e) => handleChange(e)}
-              />
-              <div className="profile-pic2">
-                <label htmlFor="profile-pic2">
-                  Profile picture:
-                  <input
-                    type="file"
-                    id="profile-pic2"
-                    name="pic"
-                    onChange={(e) => handleImageUpload(e)}
-                  />
-                </label>
-              </div>
-            </label>
+          <div className="date-image">
+            <input
+              type="date"
+              id="udate"
+              name="date"
+              placeholder="Date"
+              onChange={(e) => handleChange(e)}
+            />
+            <div className="profile-pic2">
+              <label htmlFor="profile-pic2">
+                Upload image
+                <input
+                  type="file"
+                  id="profile-pic2"
+                  name="pic"
+                  className="hidden"
+                  onChange={(e) => handleImageUpload(e)}
+                />
+              </label>
+            </div>
           </div>
         </div>
       ) : (
@@ -191,7 +208,7 @@ function Employee({
         <button
           className="update"
           onClick={() => {
-            edit ? handleResubmit(id, obj) : handleUpdate(id);
+            edit ? handleEmployeeUpdate() : handleUpdate(id);
           }}
         >
           {edit ? "Update" : "Edit"}

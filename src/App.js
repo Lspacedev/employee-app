@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import AddEmployee from "./components/addEmployee";
+
 import DisplayEmployees from "./components/displayEmployees";
 import { useState } from "react";
 import useLocalStorage from "./components/useLocalStorage";
@@ -17,7 +17,7 @@ function App() {
         employee.id === obj.id ||
         employee.surname === obj.surname ||
         employee.email === obj.email ||
-        employee.phone === obj.phone,
+        employee.phone === obj.phone
     );
 
     //if employee doesn't exist add them
@@ -31,10 +31,16 @@ function App() {
   }
 
   function handleDeleteEmployee(id) {
-    const filteredEmployees = employees.filter(
-      (employee) => employee.id !== id,
+    let deleteConfirmation = window.confirm(
+      "Are you sure you want to delete employee?"
     );
-    setEmployees(filteredEmployees);
+    if (deleteConfirmation) {
+      const filteredEmployees = employees.filter(
+        (employee) => employee.id !== id
+      );
+      alert("Employee has been deleted");
+      setEmployees(filteredEmployees);
+    }
   }
 
   function handleUpdate(id) {
@@ -45,75 +51,83 @@ function App() {
   }
 
   function handleResubmit(id, obj) {
-    const employeesCopy = employees.slice(0);
-    let employee = employeesCopy.find((employee) => employee.id === id);
-    if (obj.name) {
-      employee.name = obj.name;
-    }
-    if (obj.surname) {
-      employee.surname = obj.surname;
-    }
-    if (obj.id) {
-      employee.id = obj.id;
-    }
-    if (obj.position) {
-      employee.position = obj.position;
-    }
-    if (obj.department) {
-      employee.department = obj.department;
-    }
-    if (obj.email) {
-      employee.email = obj.email;
-    }
-    if (obj.phone) {
-      employee.phone = obj.phone;
-    }
-    if (obj.pic) {
-      employee.pic = obj.pic;
-    }
+    if (obj) {
+      let updateConfirmation = window.confirm(
+        "You are about to update employee information. Continue?"
+      );
+      if (updateConfirmation) {
+        const employeesCopy = employees.slice(0);
+        let employee = employeesCopy.find((employee) => employee.id === id);
 
-    /*switch (true) {
-      case obj.name !== "":
-        employee.name = obj.name;
+        if (obj.name) {
+          employee.name = obj.name;
+        }
+        if (obj.surname) {
+          employee.surname = obj.surname;
+        }
+        if (obj.id) {
+          employee.id = obj.id;
+        }
+        if (obj.position) {
+          employee.position = obj.position;
+        }
+        if (obj.department) {
+          employee.department = obj.department;
+        }
+        if (obj.email) {
+          employee.email = obj.email;
+        }
+        if (obj.phone) {
+          employee.phone = obj.phone;
+        }
+        if (obj.date) {
+          employee.date = obj.date;
+        }
+        if (obj.pic) {
+          employee.pic = obj.pic;
+        }
 
-      case obj.surname !== "":
-        employee.surname = obj.surname;
+        employee.edit = false;
 
-      case obj.id !== "":
-        employee.id = obj.id;
+        if (
+          !obj.name &&
+          !obj.surname &&
+          !obj.id &&
+          !obj.position &&
+          !obj.department &&
+          !obj.email &&
+          !obj.phone &&
+          !obj.date &&
+          !obj.pic
+        ) {
+          alert("Error! No update information was entered!");
+        } else {
+          alert("Employee has been updated");
+        }
 
-      case obj.position !== "":
-        employee.position = obj.position;
-
-      case obj.department !== "":
-        employee.department = obj.department;
-
-      case obj.email !== "":
-        employee.email = obj.email;
-
-      case obj.phone !== "":
-        employee.phone = obj.phone;
-
-      case obj.pic !== "":
-        employee.pic = obj.pic;
-      default:
-        alert("The end");
-        break;
-    }*/
-    employee.edit = false;
-    setEmployees(employeesCopy);
+        setEmployees(employeesCopy);
+      }
+    } else {
+      const employeesCopy = employees.slice(0);
+      let employee = employeesCopy.find((employee) => employee.id === id);
+      employee.edit = false;
+      setEmployees(employeesCopy);
+    }
   }
 
   return (
     <div className="App">
-      <AddEmployee handleAddEmployees={handleAddEmployees} />
       <Sidebar />
-      <DisplayEmployees
-        employees={employees}
-        handleDeleteEmployee={handleDeleteEmployee}
-        handleUpdate={handleUpdate}
-        handleResubmit={handleResubmit}
-      />
+
+      <div className="Main">
+        <DisplayEmployees
+          employees={employees}
+          handleDeleteEmployee={handleDeleteEmployee}
+          handleUpdate={handleUpdate}
+          handleResubmit={handleResubmit}
+          handleAddEmployees={handleAddEmployees}
+        />
+      </div>
     </div>
   );
 }
