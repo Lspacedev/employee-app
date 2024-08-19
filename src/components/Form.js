@@ -155,7 +155,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
 
           <input
             type="submit"
-            value="submit"
+            value="Submit"
             onClick={(e) => handleSubmit(e)}
           ></input>
         </form>

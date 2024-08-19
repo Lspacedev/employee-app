@@ -148,10 +148,10 @@ body {
 .department-position,
 .phone-number-date {
   display: flex;
-  text-align: start;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 5px;
   padding: 0px;
-  margin: 0px;
+  margin: 5px 0px;
 }
 #date {
   padding: 4px 28px;
@@ -160,20 +160,28 @@ body {
 #fname {
 }
 .form-div form input {
-  margin: 5px 0px;
+  margin: 0px 0px;
   padding: 5px 0px;
   outline: none;
   border: 1px solid #bbb;
   border-radius: 2px;
 }
 
-.form-div .form-div form label {
-  margin: 0px;
+.form-div form label {
+  width: 100%;
   padding: 0px;
+  margin: 0px;
   color: rgb(133, 133, 133);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
 }
-
+.form-div form input[type="file"] {
+  font-size: 0.7rem;
+  outline: none;
+  border: none;
+}
 .form-div input[type="submit"] {
   padding: 15px 50px;
   width: auto;
