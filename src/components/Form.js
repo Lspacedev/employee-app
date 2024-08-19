@@ -90,6 +90,7 @@ function Form({ handleAddEmployees, toggleClicked }) {
                 name="email"
                 onChange={(e) => handleChange(e)}
                 value={obj.email}
+                required
               />
             </label>
           </div>

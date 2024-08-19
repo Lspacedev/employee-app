@@ -7,9 +7,11 @@ body,
 * {
   font-family: "Poppins", sans-serif;
 }
-
+body {
+  background-color: #094074;
+}
 .App {
-  height: 100%;
+  min-height: 100vh;
   text-align: center;
   background-color: white;
   display: grid;
@@ -33,23 +35,23 @@ body,
   background-color: #094074;
 }
 
+.Sidebar {
+  grid-column: 1/2;
+  grid-row: 1/11;
+  padding: 0px;
+  margin: 0px;
+}
+
 .logo {
   font-size: 1.2rem;
   font-weight: bold;
   color: #094074;
-  margin-bottom: 30px;
+  margin: 0px 0px 150px 0px;
+  padding: 50px 0px;
 }
-
-.Sidebar {
-  grid-column: 1/2;
-  grid-row: 1/11;
-  padding: 0px 0px;
-  text-align: center;
+.Sidebar .links {
+  margin: 15px 0px;
 }
-.Sidebar div {
-  padding: 15px 0px;
-}
-
 .Main {
   grid-column: 2/6;
   grid-row: 1/11;
@@ -59,13 +61,15 @@ body,
 
 .Display {
   width: inherit;
-  height: inherit;
+  height: 100%;
+  overflow: hidden;
 }
 
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 10px 0px;
 }
 
 .search-div {
@@ -109,14 +113,6 @@ body,
 }
 .search-icon-btn {
   display: none;
-}
-
-.Display ul {
-  list-style: none;
-  width: inherit;
-  height: 100vh;
-  margin: 0px;
-  background-color: lightgray;
 }
 
 .Form {
@@ -202,17 +198,22 @@ body,
 }
 
 .employees-display {
+  list-style: none;
+  width: inherit;
+  height: calc(100% - 90px);
+  margin: 0px;
+  padding: 25px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   flex: 4;
-  gap: 50px;
-
-  background-color: whitesmoke;
+  gap: 25px;
+  background-color: rgb(230, 230, 230);
 }
 
 .employees-display li {
   flex: 25%;
+  flex-grow: 1;
   height: 320px;
 
   max-width: 250px;
@@ -255,6 +256,7 @@ body,
   text-align: start;
   border: none;
 }
+
 .update-form input[type="text"]:focus {
   background-color: #fff6e9;
   border-bottom: 1px solid #bbb;
@@ -432,6 +434,29 @@ body,
 }
 
 @media (max-width: 768px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+  }
+
+  .Main {
+    height: calc(100% - 224px);
+  }
+
+  .Display {
+    width: inherit;
+
+    overflow: visible;
+  }
+  .employees-display {
+    overflow-y: scroll;
+  }
+  .logo {
+    margin: 0px;
+  }
   .delete-update {
     gap: 80px;
   }
@@ -462,12 +487,6 @@ body,
 }
 
 @media (max-width: 480px) {
-  .App {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
   .Display {
     padding: 0;
     margin: 0;
@@ -475,7 +494,6 @@ body,
 
   .employees-display {
     margin: 0;
-    padding: 0;
   }
   .employees-display li {
     flex: 100%;

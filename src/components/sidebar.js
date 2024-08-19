@@ -5,11 +5,11 @@ function Sidebar() {
   return (
     <div className="Sidebar">
       <div className="logo">Employee App</div>
-      <div>
+      <div className="links">
         <RiDashboardLine />
         Dashboard
       </div>
-      <div>
+      <div className="links">
         <IoPersonOutline /> Employees
       </div>
     </div>

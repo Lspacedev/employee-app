@@ -23,7 +23,7 @@ function App() {
     //if employee doesn't exist add them
     if (filteredEmployee.length === 0) {
       if (obj.name === "" || obj.surname === "") {
-        alert("PLease enter employee name and surname.");
+        alert("Please enter employee name and surname.");
       } else {
         setEmployees((prev) => [...prev, obj]);
       }
@@ -58,34 +58,17 @@ function App() {
       if (updateConfirmation) {
         const employeesCopy = employees.slice(0);
         let employee = employeesCopy.find((employee) => employee.id === id);
-
-        if (obj.name) {
-          employee.name = obj.name;
-        }
-        if (obj.surname) {
-          employee.surname = obj.surname;
-        }
-        if (obj.id) {
-          employee.id = obj.id;
-        }
-        if (obj.position) {
-          employee.position = obj.position;
-        }
-        if (obj.department) {
-          employee.department = obj.department;
-        }
-        if (obj.email) {
-          employee.email = obj.email;
-        }
-        if (obj.phone) {
-          employee.phone = obj.phone;
-        }
-        if (obj.date) {
-          employee.date = obj.date;
-        }
-        if (obj.pic) {
-          employee.pic = obj.pic;
-        }
+        employee.name = obj.name ? obj.name : employee.name;
+        employee.surname = obj.surname ? obj.surname : employee.surname;
+        employee.id = obj.id ? obj.id : employee.id;
+        employee.position = obj.position ? obj.position : employee.position;
+        employee.department = obj.department
+          ? obj.department
+          : employee.department;
+        employee.email = obj.email ? obj.email : employee.email;
+        employee.phone = obj.phone ? obj.phone : employee.phone;
+        employee.date = obj.date ? obj.date : employee.date;
+        employee.pic = obj.pic ? obj.pic : employee.pic;
 
         employee.edit = false;
 
