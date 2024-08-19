@@ -51,6 +51,7 @@ body {
 }
 .Sidebar .links {
   margin: 15px 0px;
+  cursor: pointer;
 }
 .Main {
   grid-column: 2/6;
