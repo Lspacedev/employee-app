@@ -491,6 +491,16 @@ body {
   .form-div form input {
     float: right;
   }
+  .header {
+    flex-direction: column;
+  }
+  .search-div {
+    width: 100%;
+  }
+  .Add-div button {
+    padding: 12px 30px;
+    margin: 15px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -505,25 +515,9 @@ body {
     font-size: 1.5rem;
     margin-right: 0px;
   }
-  .header {
-    flex-direction: column;
-  }
-  .search-div {
-    width: 100%;
-  }
 }
 
 @media (max-width: 320px) {
-  .Add-div {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Add-div button {
-    padding: 12px 30px;
-    margin: 15px;
-  }
-
   .logo {
     margin: 15px;
   }
