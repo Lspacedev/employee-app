@@ -4,6 +4,7 @@ import useLocalStorage from "./useLocalStorage";
 import { IoIosSearch } from "react-icons/io";
 import AddEmployee from "./addEmployee";
 import ProfileIcon from "./profileIcon";
+import SeachBar from "./searchBar";
 
 function DisplayEmployees({
   employees,
@@ -73,26 +74,12 @@ function DisplayEmployees({
     <div className="Display">
       <div className="header">
         <div className="search-profile">
-          <div className="search-div">
-            <div id="search-icon-div">
-              <IoIosSearch
-                id="search-icon"
-                style={{
-                  fontSize: "1.6rem",
-                  margin: "0px",
-                }}
-              />
-            </div>
-            <input
-              type="search"
-              placeholder="Search recipes"
-              onChange={handleSearchChange}
-              value={searchInput}
-            />
-            <button id="search-btn" onClick={handleSearchSubmit}>
-              search
-            </button>
-          </div>
+          <SeachBar
+            handleSearchChange={handleSearchChange}
+            handleSearchSubmit={handleSearchSubmit}
+            searchInput={searchInput}
+          />
+
           <ProfileIcon />
         </div>
         <div className="count-add">
