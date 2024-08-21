@@ -177,7 +177,7 @@ function Employee({
           <div className="profile-name">
             <div className="profile-pic">{pic && <img src={pic} />}</div>
             <div className="name">
-              <div>{name + " " + surname}</div>
+              <div className="fname-sname">{name + " " + surname}</div>
               <div className="position">{position}</div>
             </div>
           </div>

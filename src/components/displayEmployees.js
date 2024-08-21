@@ -3,6 +3,7 @@ import Employee from "./employee";
 import useLocalStorage from "./useLocalStorage";
 import { IoIosSearch } from "react-icons/io";
 import AddEmployee from "./addEmployee";
+import ProfileIcon from "./profileIcon";
 
 function DisplayEmployees({
   employees,
@@ -71,31 +72,40 @@ function DisplayEmployees({
   return (
     <div className="Display">
       <div className="header">
-        <div className="search-div">
-          <div id="search-icon-div">
-            <IoIosSearch
-              id="search-icon"
-              style={{
-                fontSize: "1.6rem",
-                margin: "0px",
-              }}
+        <div className="search-profile">
+          <div className="search-div">
+            <div id="search-icon-div">
+              <IoIosSearch
+                id="search-icon"
+                style={{
+                  fontSize: "1.6rem",
+                  margin: "0px",
+                }}
+              />
+            </div>
+            <input
+              type="search"
+              placeholder="Search recipes"
+              onChange={handleSearchChange}
+              value={searchInput}
             />
+            <button id="search-btn" onClick={handleSearchSubmit}>
+              search
+            </button>
           </div>
-          <input
-            type="search"
-            placeholder="Search recipes"
-            onChange={handleSearchChange}
-            value={searchInput}
-          />
-          <button id="search-btn" onClick={handleSearchSubmit}>
-            search
-          </button>
+          <ProfileIcon />
         </div>
-        <AddEmployee
-          handleAddEmployees={handleAddEmployees}
-          handleResubmit={handleResubmit}
-          handleUpdate={handleUpdate}
-        />
+        <div className="count-add">
+          <div className="employee-count">
+            <div>{employees.length}</div> <p> employees</p>
+          </div>
+
+          <AddEmployee
+            handleAddEmployees={handleAddEmployees}
+            handleResubmit={handleResubmit}
+            handleUpdate={handleUpdate}
+          />
+        </div>
       </div>
 
       <ul className="employees-display">
