@@ -1,5 +1,8 @@
 import { FaPhone } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
+import IconText from "./iconText";
+import { IoIosClose } from "react-icons/io";
+
 import { useState } from "react";
 
 function Employee({
@@ -68,7 +71,7 @@ function Employee({
       {edit === true ? (
         <div className="update-form">
           <div className="cancel-update" onClick={() => handleResubmit(id)}>
-            x
+            <IoIosClose />
           </div>
           <div className="name">
             <label htmlFor="fname">
@@ -193,14 +196,14 @@ function Employee({
             </div>
           </div>
           <div className="email-phone">
-            <div className="email">
+            <IconText classText="email">
               <MdOutlineEmail style={{ paddingRight: "5px" }} />
               {email}
-            </div>
-            <div className="phone">
+            </IconText>
+            <IconText classText="phone">
               <FaPhone style={{ paddingRight: "5px" }} />
               {phone}
-            </div>
+            </IconText>
           </div>
         </div>
       )}

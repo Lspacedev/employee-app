@@ -1,17 +1,19 @@
 import { IoPersonOutline } from "react-icons/io5";
 import { RiDashboardLine } from "react-icons/ri";
+import SidebarLinks from "./sidebarLinks";
 
 function Sidebar() {
   return (
     <div className="Sidebar">
       <div className="logo">Employee App</div>
-      <div className="links">
+      <SidebarLinks>
         <RiDashboardLine />
-        Dashboard
-      </div>
-      <div className="links">
-        <IoPersonOutline /> Employees
-      </div>
+        <p>Dashboard</p>
+      </SidebarLinks>
+      <SidebarLinks>
+        <IoPersonOutline />
+        <p>Employees</p>
+      </SidebarLinks>
     </div>
   );
 }
