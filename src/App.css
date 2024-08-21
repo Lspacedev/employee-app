@@ -452,17 +452,15 @@ body {
   }
 
   .Main {
-    height: calc(100% - 224px);
   }
-
   .Display {
-    width: inherit;
+    height: 100%;
+  }
 
-    overflow: visible;
-  }
   .employees-display {
-    overflow-y: scroll;
+    height: calc(100% - 160px);
   }
+
   .logo {
     margin: 0px;
   }
@@ -496,18 +494,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .Display {
-    padding: 0;
-    margin: 0;
-  }
-
-  .employees-display {
-    margin: 0;
-  }
-  .employees-display li {
-    flex: 100%;
-  }
-
   .Sidebar {
     padding: 20px 0px;
   }
