@@ -17,9 +17,6 @@ body,
   grid-template-rows: repeat(10, 10%);
 }
 
-.Add-div {
-}
-
 .Add-div button {
   padding: 12px 30px;
 
